@@ -4,6 +4,7 @@ header{
 .row{
 	width:960px;
 	max-width:960px;
+	margin:0;
 }
 .wrapper{
 	width:960px;
@@ -16,18 +17,23 @@ header{
 		
 }
 
+.searchBar{
+	width:280px;
+	
+}
+
 .farmerCard{
 	width:280px;
 	height:150px;
-	border:1px solid red;
+	background-color: #b4b4b4;
+	margin:15px;
 }
 
 .searchResultsWrapper{
 	max-width: 960px;
-	padding-top:75px;
-	padding-right:25px;
-	padding-left:25px;
-	border:1px solid green;
+	padding-top:60px;
 
+	background-color:#e2e2e2;
+	
 	
 }
