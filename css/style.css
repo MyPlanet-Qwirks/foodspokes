@@ -30,7 +30,8 @@ header{
 }
 
 .searchBar{
-	width:280px;	
+	width:280px;
+		
 }
 
 .farmerCard{
@@ -53,4 +54,12 @@ header{
 #pageslide{
 	/*width:660px;*/
 	
+}
+
+.navbar{
+	margin-bottom:0;
+}
+
+.navbar-brand{
+	margin-right:15px;
 }
