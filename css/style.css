@@ -59,4 +59,45 @@ header{
 }
 
 .navbar-brand{
+background-color: #333333;
+font-size: 26px;
+text-transform: uppercase;
+color: #fff;
+}
+
+.nav{
+color: #fff;
+background-color: #333333;
+}
+
+.nav a{
+color: #fff;
+}
+
+.navbar nav a{
+color: #fff;
+}
+
+.active{
+background-color: #cc6633;
+}
+
+.filter{
+background-color: #cc6633;
+color: #fff;
+font-size: 20px;
+text-transform: lowercase;
+}
+
+h1{
+font-size: 30px;
+}
+
+h3{
+text-transform: uppercase;
+}    
+
+body{
+font-family: 'Source Sans Pro', sans-serif;
+font-size: 18px;
 }
