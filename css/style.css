@@ -12,6 +12,7 @@ header{
 	width:960px;
 	max-width:960px;
 	border:1px solid red;
+	margin:0 auto;
 }
 
 .checkbox+.checkbox{

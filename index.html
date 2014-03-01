@@ -4,6 +4,7 @@
 	<title>Foodspokes Search</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/jquery.pageslide.css">
 	
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
@@ -13,7 +14,11 @@
 	<link rel="stylesheet" href="css/style.css">
 	
 	<!-- Latest compiled and minified JavaScript -->
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+	
+	<script src="js/jquery.pageslide.min.js"></script>
 </head>
 <body>
 
@@ -54,6 +59,8 @@
 			<div>Products</div>
 			<div>Contact</div>
 			<div>Delivery Schedule</div>
+			<a href="#modal" class="second">Link text</a>
+			
 		</div>
 		<div class="col-md-4 farmerCard">
 			<h4>Name</h4>
@@ -85,6 +92,15 @@
 			<div>Contact</div>
 			<div>Delivery Schedule</div>
 		</div>
+	</div>
+	<div id="pageslide">
+		<div id="modal" style="display:none">
+		    <h2>Modal</h2>
+		    <a href="javascript:$.pageslide.close()">Close</a>
+		</div>
+		<script>
+		    $(".second").pageslide({ direction: "left", modal: true });
+		</script>
 	</div>
 
 	
