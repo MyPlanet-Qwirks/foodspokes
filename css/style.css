@@ -101,15 +101,9 @@ border-bottom:thick solid #cc6633;
 background-color: #cc6633;
 color: #fff;
 font-size: 20px;
-<<<<<<< HEAD
-<<<<<<< HEAD
 text-transform: uppercase;
-=======
 line-height:20px;
-=======
->>>>>>> parent of 4456fec... Fixes
 text-transform: lowercase;
->>>>>>> 4456fec1c90cb55807ff5e9cbbebc7c301ed0399
 }
 
 h1{
