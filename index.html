@@ -63,17 +63,23 @@
 	<div class="row searchRow filter">
 		<form>
             <div class="col-md-2"></div>
-            <div class="checkbox col-md-2">
-            	<label><input type="checkbox"/>Fruits</label><br/>
-				<label><input type="checkbox"/>Vegetables</label><br/>
-            </div>
-			<div class="checkbox col-md-2">
-                <label><input type="checkbox"/>Dairy</label><br/>
-				<label><input type="checkbox"/>Meats</label><br/>
+            <div class="col-md-2">
+				<div class="checkbox">
+					<label><input type="checkbox"/>Fruits</label><br/>
+					<label><input type="checkbox"/>Vegetables</label><br/>
+					</div>
+				</div>
+			<div class="col-md-2">
+				<div class="checkbox">
+					<label><input type="checkbox"/>Dairy</label><br/>
+					<label><input type="checkbox"/>Meats</label><br/>
+				</div>
 			</div>
-			<div class="checkbox col-md-2">
-				<label><input type="checkbox"/>Grains</label><br/>
-				<label><input type="checkbox"/>Wine</label><br/>
+			<div class="col-md-2">
+				<div class="checkbox">
+					<label><input type="checkbox"/>Grains</label><br/>
+					<label><input type="checkbox"/>Wine</label><br/>
+				</div>
 			</div>
 			<div class="col-md-3" style="padding-left:0;">
 				<input class="searchBar" type="text" placeholder="Search..."/>
@@ -86,83 +92,10 @@
 			<div>Vegetables, Dairy</div>
 			<div>Barrie, ON</div>
 			<!-- Button trigger modal -->
-			<a data-toggle="modal" data-target="#myModal">
+			<a data-toggle="modal" data-target="#modal1">
 				Details
 			</a>
-			<!-- Modal -->
-			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			  <div class="modal-dialog">
-			    <div class="modal-content">
-			      <div class="modal-header">
-			        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-			        <h4 class="modal-title" id="myModalLabel">Farmer Brown</h4>
-			      </div>
-			      <div class="modal-body">
-					<div class="general-info">
-					<h5>Address:</h5>
-						76 ADDRESS ROAD</br>
-						TORONTO, ON L3X 3A9</br>
-						TEL: (905) 000-0000</br>
-						</br>
-						<a href>http://farmerbrown.com</a>
-						<p><i class="fa fa-facebook-square fa-2x"></i>
-							<i class="fa fa-twitter-square fa-2x"></i>
-							<i class="fa fa-google-plus-square fa-2x"></i>
-							</p>
-					</div>
-					<div class="product-info">
-					<h5>Products:</h5>
-						<ul>
-							<li>Vegetables:
-								<ul>
-									<li>potatoes</li>
-									<li>cabbage</li>
-									<li>onions</li>
-								</ul>
-							</li>
-							<li>Meat:
-								<ul>
-									<li>beef</li>
-									<li>chicken</li>
-								</ul>
-							</li>
-							<li>Dairy:
-								<ul>
-									<li>milk</li>
-									<li>eggs</li>
-									<li>cheese</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-					<div class="availability-info">
-						<h5>Availability:</h5>
-						<ul>
-							<li>Mondays
-							<ul>
-								<li>Toronto: 11am - 5pm</li>
-							</ul>
-							</li>
-							<li>Tuesdays
-							<ul>
-								<li>Waterloo: 10am - 4pm</li>
-							</ul>
-							</li>
-						</ul>
-					</div>
-					<div class="invoice-info">
-						<h5>Invoice Style:</h5>
-						<ul>
-							<li>cash on delivery</li>
-						</ul>
-					</div>
-			      </div>
-			      <div class="modal-footer">
-			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			      </div>
-			    </div>
-			  </div>
-			</div>
+			
 			             
 			
 		</div>
@@ -193,9 +126,83 @@
 		</div>
 	</div>
 	
-
+	<!-- Modal -->
+	<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h4 class="modal-title" id="myModalLabel">Farmer Brown</h4>
+		  </div>
+		  <div class="modal-body">
+			<div class="general-info">
+			<h5>Address:</h5>
+				76 ADDRESS ROAD</br>
+				TORONTO, ON L3X 3A9</br>
+				TEL: (905) 000-0000</br>
+				</br>
+				<a href>http://farmerbrown.com</a>
+				<p><i class="fa fa-facebook-square fa-2x"></i>
+					<i class="fa fa-twitter-square fa-2x"></i>
+					<i class="fa fa-google-plus-square fa-2x"></i>
+					</p>
+			</div>
+			<div class="product-info">
+			<h5>Products:</h5>
+				<ul>
+					<li>Vegetables:
+						<ul>
+							<li>potatoes</li>
+							<li>cabbage</li>
+							<li>onions</li>
+						</ul>
+					</li>
+					<li>Meat:
+						<ul>
+							<li>beef</li>
+							<li>chicken</li>
+						</ul>
+					</li>
+					<li>Dairy:
+						<ul>
+							<li>milk</li>
+							<li>eggs</li>
+							<li>cheese</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="availability-info">
+				<h5>Availability:</h5>
+				<ul>
+					<li>Mondays
+					<ul>
+						<li>Toronto: 11am - 5pm</li>
+					</ul>
+					</li>
+					<li>Tuesdays
+					<ul>
+						<li>Waterloo: 10am - 4pm</li>
+					</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="invoice-info">
+				<h5>Invoice Style:</h5>
+				<ul>
+					<li>cash on delivery</li>
+				</ul>
+			</div>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+	  </div>
+	</div>
 	
 </div>
+
 
 
 

@@ -15,7 +15,7 @@ header{
 }
 
 .checkbox+.checkbox{
-	margin-top:15px;
+
 }
 
 .searchRow{
@@ -88,6 +88,7 @@ background-color: #cc6633;
 background-color: #cc6633;
 color: #fff;
 font-size: 20px;
+line-height:20px;
 text-transform: lowercase;
 }
 
