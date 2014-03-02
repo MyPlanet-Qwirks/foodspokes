@@ -103,7 +103,6 @@ color: #fff;
 font-size: 20px;
 text-transform: uppercase;
 line-height:20px;
-text-transform: lowercase;
 }
 
 h1{
@@ -114,6 +113,7 @@ font-size: 26px;
 h2{
 font-size: 24px;
 font-weight: 600;
+text-transform: uppercase;
 }
 
 h3{
