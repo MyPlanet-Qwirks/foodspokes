@@ -3,14 +3,14 @@ header{
 }
 .row{
 	width:1280px;
-	max-width:1280px;
+	max-width:100%;
 	margin:0;
 	padding-left:15px;
 	padding-right:15px;
 }
 .wrapper{
 	width:1280px;
-	max-width:1280px;
+	max-width:100%;
 	margin:0 auto;
 }
 
@@ -48,12 +48,15 @@ background-color: #59642b;
 }
 
 .searchResultsWrapper{
-	max-width: 1280px;
+	max-width: 100%;
     padding: 30px 40px 50px 40px;
 	background-color:#999933;
 }
 
 .checkbox{
+font-size: 18px;
+font-family: avenir;
+font-weight: 300;
 padding: 10px;
 }
 
@@ -72,6 +75,10 @@ padding: 10px;
     padding: 20px;
 }
 
+.navbar{
+width: 100%;
+}
+
 .nav{
 color: #fff;
 background-color: #333333;
@@ -83,12 +90,12 @@ color: #fff;
 
 .navbar-nav{
 text-align: center;
-font-size: 22px;
+font-size: 30px;
 }
 
 .navbar-brand{
 font-weight: 600;
-font-size: 30px;
+font-size: 38px;
 }
 
 .navbar nav a{
@@ -106,12 +113,12 @@ border-bottom:thick solid #cc6633;
 .filter{
 background-color: #cc6633;
 color: #fff;
-font-size: 24px;
+padding: 15px;
+font-size: 60px;
+font-weight: 300;
 text-transform: uppercase;
-line-height:25px;
-padding: 10px;
-
 }
+
 
 h1{
 color: #fff;
@@ -143,6 +150,7 @@ width: 100%;
 color: #fff;
 height: 300px;
 padding: 25px;
+max-height: 100%;
 font-size: 16px;
 line-height: 21px;
 }
