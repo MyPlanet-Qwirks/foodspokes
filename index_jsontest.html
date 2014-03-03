@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<title>Foodspokes || Find</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<!--<link rel="stylesheet" href="css/jquery.pageslide.css">-->
+	
+	
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+	
+	
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' rel='stylesheet' type='text/css'>
+	<!-- Custom Styles -->
+	<link rel="stylesheet" href="css/style.css">
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+	
+	
+</head>
+<body>
+<!-- <script src="js/jquery.pageslide.min.js"></script> -->
+
+<div class="wrapper">
+		<nav class="navbar" role="navigation">
+		    
+		
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		      <ul class="nav navbar-nav">
+                <a class="navbar-brand" href="#"><img src="img/logo.png" width="30">&nbsp;Foodspokes</a>
+		      	<li><a href="#">Home</a></li>
+		      	<li><a href="#">About</a></li>
+		      	<li><a href="#">Contact</a></li>
+		        <li class="active"><a href="#">Find</a></li>
+                  
+		      </ul>
+		     
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-right">
+                <input class="searchBar" type="text" placeholder="Search..."/>
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		    </div>
+		</nav>
+	
+	<div class="row searchRow filter">
+		<form>
+            <div class="col-md-1"></div>
+            <div class="col-md-2"><h2>Find:</h2></div>
+            <div class="col-md-2">
+				<div class="checkbox">
+					<label><input type="checkbox"/><img src="img/fruit.png" width="20">&nbsp;&nbsp;Fruit</label><br/>
+					<label><input type="checkbox"/><img src="img/vegetable.png" width="25">&nbsp;Vegetables</label><br/>
+				</div>
+			</div>
+			<div class="col-md-2">
+				<div class="checkbox">
+					<label><input type="checkbox"/><img src="img/dairy.png" width="25">&nbsp;&nbsp;Dairy</label><br/>
+					<label><input type="checkbox"/><img src="img/meat.png" width="30">&nbsp;Meat</label><br/>
+				</div>
+			</div>
+			<div class="col-md-2">
+				<div class="checkbox">
+					<label><input type="checkbox"/><img src="img/grain.png" width="20">&nbsp;Grain</label><br/>
+					<label><input type="checkbox"/><img src="img/wine.png" width="20">&nbsp;Wine</label><br/>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="row searchResultsWrapper" id="ng-app" ng-app ng-controller="getFarmerData">
+        <div class="col-md-3"  ng-repeat="farmer in farmers">
+            <div class="farmerCard">
+			<h3>{{farmer.node_title}}</h3>
+			<div>{{farmer.location}}</div>
+            <a data-toggle="modal" data-target="#myModal">Details</a>
+		    </div>
+			<div class="farmericon">
+				
+				<img ng-repeat="category in farmer.category" src="img/{{category}}_st.png" width="40">
+		
+			</div>
+        </div>  
+
+		<script>
+		function getFarmerData($scope, $http){
+			$http({method: 'GET', url: 'http://dev-foodspokes.gotpantheon.com/api/farmers.json'}).success(function(data){
+				$scope.farmers = data; // response data 
+			});
+			
+		}
+		</script>		
+
+        
+	</div>
+	
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+	<div class="modal-content">
+	  <div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<h4 class="modal-title" id="myModalLabel">Farmer Brown</h4>
+	  </div>
+	  <div class="modal-body">
+		<div class="general-info">
+		<h5>Address:</h5>
+			76 ADDRESS ROAD</br>
+			TORONTO, ON L3X 3A9</br>
+			TEL: (905) 000-0000</br>
+			</br>
+			<a href>http://farmerbrown.com</a>
+			<p><i class="fa fa-facebook-square fa-2x"></i>
+				<i class="fa fa-twitter-square fa-2x"></i>
+				<i class="fa fa-google-plus-square fa-2x"></i>
+				</p>
+		</div>
+		<div class="product-info">
+		<h5>Products:</h5>
+			<ul>
+				<li>Vegetables:
+					<ul>
+						<li>potatoes</li>
+						<li>cabbage</li>
+						<li>onions</li>
+					</ul>
+				</li>
+				<li>Meat:
+					<ul>
+						<li>beef</li>
+						<li>chicken</li>
+					</ul>
+				</li>
+				<li>Dairy:
+					<ul>
+						<li>milk</li>
+						<li>eggs</li>
+						<li>cheese</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="availability-info">
+			<h5>Availability:</h5>
+			<ul>
+				<li>Mondays
+				<ul>
+					<li>Toronto: 11am - 5pm</li>
+				</ul>
+				</li>
+				<li>Tuesdays
+				<ul>
+					<li>Waterloo: 10am - 4pm</li>
+				</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="invoice-info">
+			<h5>Invoice Style:</h5>
+			<ul>
+				<li>cash on delivery</li>
+			</ul>
+		</div>
+	  </div>
+	  <div class="modal-footer">
+		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	  </div>
+	</div>
+  </div> 
+</div>
+        
+<footer>
+        <div class="col-md-3 profile">
+        <img src="img/vanessa.png">
+        <br>Vanessa Ling Yu
+        </div>
+    
+    <div class="col-md-5 footerinfo">
+    <p>Vanessa brings expertise in the areas of health and hospitality as Founder of FoodSpokes. Her experiences in    creating meaningful engagement and integrating complex and diverse ideas inform her participatory approaches to building collaborative stakeholder initiatives. </p>
+
+<p>Prior to starting FoodSpokes, Vanessa received graduate degrees from the University of Toronto and University of Chicago and worked as a consultant for a number of local, provincial, and international organizations. </p>
+    </div>
+    
+    <div class="col-md-1"></div>
+    
+    <div class="col-md-3 footerinfo">
+        
+    info@foodspokes.com
+    <br><br>215 Spadina Avenue
+    <br>Centre for Social Innovation
+    
+    <div class="socialmedia">
+    <br><i class="fa fa-twitter"></i>
+        <i class="fa fa-facebook"></i>
+    </div>
+    </div>
+    
+</footer>
+
+</div>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" ng-app id="ng-app">
+<head>
+	<title>Foodspokes || Find</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<!--<link rel="stylesheet" href="css/jquery.pageslide.css">-->
+	
+	
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+	
+	
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700' rel='stylesheet' type='text/css'>
+
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+	
+	
+</head>
+
+<body>
+<div>sdasd</div>
+<div id="ng-app" ng-app ng-controller="getFarmerData"> 
+ 
+<div ng-repeat="farmer in farmers">
+<h2>
+<a>{{farmer.node_title}}</a>
+</h2>
+<div class='time'>{{farmer.Availability}} </div>
+<p>{{farmer.Category}}</p>
+<img/>
+</div>
+
+<script>
+function getFarmerData($scope, $http)
+{
+$http({method: 'GET', url: 'http://dev-foodspokes.gotpantheon.com/api/farmers.json'}).success(function(data)
+{
+$scope.farmers = data; // response data 
+});
+}
+</script>
+   
+</div>
+
+
+
+
+</body>
+</html>
+
+
+<!-- http://dev-foodspokes.gotpantheon.com/api/farmers.json -->
