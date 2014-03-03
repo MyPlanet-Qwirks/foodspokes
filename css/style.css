@@ -2,15 +2,15 @@ header{
 
 }
 .row{
-	width:960px;
-	max-width:960px;
+	width:1280px;
+	max-width:1280px;
 	margin:0;
 	padding-left:15px;
 	padding-right:15px;
 }
 .wrapper{
-	width:960px;
-	max-width:960px;
+	width:1280px;
+	max-width:1280px;
 	margin:0 auto;
 }
 
@@ -32,15 +32,23 @@ margin-right: 15px;
 }
 
 .farmerCard{
+    padding-top: 5px;
     text-align: center;
     height: 150px;
-	background-color: #f1f7cd;
-    margin: 20px;
-    width: 270px;
+	background-color: #fff;
+    opacity: 0.7;
+    margin: 20px 10px 0px 0px;
+    width: 100%;
+}
+
+.farmericon{
+width: 100%;
+height: 50px;
+background-color: #59642b;
 }
 
 .searchResultsWrapper{
-	max-width: 960px;
+	max-width: 1280px;
 	padding-top:30px;
     padding-bottom: 50px;
 	background-color:#999933;
@@ -99,9 +107,11 @@ border-bottom:thick solid #cc6633;
 .filter{
 background-color: #cc6633;
 color: #fff;
-font-size: 20px;
+font-size: 24px;
 text-transform: uppercase;
-line-height:20px;
+line-height:25px;
+padding: 10px;
+
 }
 
 h1{
@@ -125,4 +135,28 @@ font-family: 'Source Sans Pro', sans-serif;
 font-size: 18px;
 background-image: url('sprinkles.png');
 background-repeat: repeat;
+font-weight: 300;
+}
+
+footer{
+background-color: #333333;
+width: 100%;
+color: #fff;
+height: 300px;
+padding: 25px;
+font-size: 16px;
+line-height: 21px;
+}
+
+.profile{
+font-size: 24px;
+text-align: center;
+}
+
+.socialmedia{
+font-size: 40px;
+}   
+
+.footerinfo{
+padding-top: 30px;
 }
