@@ -73,6 +73,7 @@ padding: 10px;
 	margin-bottom:0;
     text-transform: uppercase;
     padding: 20px;
+    border-radius: 0px;
 }
 
 .navbar{
@@ -89,25 +90,30 @@ color: #fff;
 }
 
 .navbar-nav{
-text-align: center;
-font-size: 30px;
+font-size: 20px;
 }
 
 .navbar-brand{
 font-weight: 600;
-font-size: 38px;
+font-size: 39px;
 }
 
-.navbar nav a{
-color: #fff;
-}
 
 .active{
 font-weight: 600;
 border-bottom:thick solid #cc6633;
 }
 
-.active a{
+.navbar ul li a:hover{
+background: #333;
+}
+
+.navbar ul li{
+display: inline;
+}
+
+.navbar ul li a{
+display:inline-block;
 }
 
 .filter{
