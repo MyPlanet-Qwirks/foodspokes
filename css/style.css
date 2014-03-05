@@ -109,10 +109,13 @@ background: #333;
 }
 
 .navbar ul li{
+margin: 0 auto;
 }
 
-.navbar ul li a{
-display:inline-block;
+.navbar ul{
+margin: 0 auto;
+text-align: center;
+list-style: none;
 }
 
 .filter{
