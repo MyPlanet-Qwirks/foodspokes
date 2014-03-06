@@ -27,8 +27,8 @@ header{
 }
 
 .searchBar{
-margin-top: 5px;
-margin-right: 15px;	
+margin-top: 12px;
+
 }
 
 .farmerCard{
@@ -42,9 +42,11 @@ margin-right: 15px;
 }
 
 .farmericon{
-width: 100%;
-height: 50px;
-background-color: #59642b;
+	width: 100%;
+	height: 50px;
+	background-color: #59642b;
+	padding:5px;
+	text-align:center;
 }
 
 .searchResultsWrapper{
@@ -174,4 +176,52 @@ font-size: 40px;
 
 .footerinfo{
 padding-top: 30px;
+}
+
+/* Modal Styles */
+.modal a{
+	color:#cc6633;
+
+}
+
+.modal a:hover{
+	color:#AD5122;
+}
+
+.modal h4{
+	margin-top:0;
+	font-weight:200;
+}
+
+.modal-social{
+	font-size:10pt;
+}
+
+.modal-header{
+	background:#59642b;
+	color:white;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom:1px solid white;
+}
+
+.modal-body{
+	background:#e0e0c1;
+}
+
+.modal-footer{
+	background:#e0e0c1;
+	padding:0 20px 20px 0;
+	border:none;
+	-webkit-border-bottom-right-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	margin:0;
 }
