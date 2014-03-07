@@ -13,9 +13,9 @@
 	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700' rel='stylesheet' type='text/css'>
 	<!-- Custom Styles -->
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style2.css">
     <link rel="stylesheet" type="text/css" href="css/normalize.css" />
-    <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <link rel="stylesheet" type="text/css" href="css/component2.css" />
     <script src="js/modernizr.custom.js"></script>
     
 	<!-- Latest compiled and minified JavaScript -->
@@ -46,39 +46,33 @@
 		    <!-- Brand and toggle get grouped for better mobile display -->
 		    <div class="navbar-right">
                 <input class="searchBar" type="text" ng-model="search.$" placeholder="search"/>
-		      <button type="button" style="margin-right:15px;margin-left:-5px;">
-		        <span class="glyphicon glyphicon-search"></span>
-		      </button>
 		    </div>
 		</nav>
-	
-	<div class="row searchRow filter">
-		<form>
-            <div class="col-md-1"></div>
-            <div class="col-md-2">FIND:
-            
-            </div>
-            <div class="col-md-2">
-				<div class="checkbox">
-					<label><input id="fruit_chk"  type="checkbox" /><img src="img/fruit_st.png" width="30">&nbsp;Fruit</label><br/>
-					<label><input id="veg_chk" type="checkbox" /><img src="img/vegetable_st.png" width="30">&nbsp;Vegetables</label><br/>
-				</div>
-			</div>
-			<div class="col-md-2">
-				<div class="checkbox">
-					<label><input id="dairy_chk" type="checkbox"  /><img src="img/dairy_st.png" width="30">&nbsp;Dairy</label><br/>
-					<label><input id="meat_chk" type="checkbox"" /><img src="img/meat_st.png" width="30">&nbsp;Meat</label><br/>
-				</div>
-			</div>
-			<div class="col-md-2">
-				<div class="checkbox">
-					<label><input id="grain_chk" type="checkbox" /><img src="img/grain_st.png" width="30">&nbsp;Grain</label><br/>
-					<label><input id="wine_chk" type="checkbox" /><img src="img/wine_st.png" width="30">&nbsp;Wine</label><br/>
-				</div>
-			</div>
-		</form>
+	                                                                                                   
+                                                                                                       
 	</div>
-	<div class="row searchResultsWrapper" >
+	<div class="row wrapper searchResultsWrapper" >
+      <div class="searchRow filter col-md-3">
+		<form>
+            FIND
+				<div class="checkbox">
+					<label><input id="fruit_chk"  type="checkbox" />
+                        <img src="img/fruit_st.png" width="30">&nbsp;Fruit</label><br/>
+					<label><input id="veg_chk" type="checkbox" />
+                        <img src="img/vegetable_st.png" width="30">&nbsp;Vegetables</label><br/>
+					<label><input id="dairy_chk" type="checkbox"  />
+                        <img src="img/dairy_st.png" width="30">&nbsp;Dairy</label><br/>
+					<label><input id="meat_chk" type="checkbox" />
+                        <img src="img/meat_st.png" width="30">&nbsp;Meat</label><br/>
+					<label><input id="grain_chk" type="checkbox" />
+                        <img src="img/grain_st.png" width="30">&nbsp;Grain</label><br/>
+					<label><input id="wine_chk" type="checkbox" />
+                        <img src="img/wine_st.png" width="30">&nbsp;Wine</label><br/>
+				</div>
+            </form>
+    </div>
+        
+        
         <div class="col-md-3"  ng-repeat="farmer in farmers | filter:search ">
             <div class="farmerCard">
 			<h3>{{farmer.node_title}}</h3>
@@ -160,7 +154,7 @@
         
 	</div>
         
-<footer>
+<footer class="wrapper">
 	<div class="col-md-3 profile">
 		<img src="img/vanessa.png">
 		<br>Vanessa Ling Yu

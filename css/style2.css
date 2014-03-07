@@ -3,14 +3,12 @@ header{
 }
 
 .row{
-	width:1280px;
 	max-width:100%;
 	margin:0;
 	padding-left:15px;
 	padding-right:15px;
 }
 .wrapper{
-	width:1280px;
 	max-width:100%;
 	margin:0 auto;
 }
@@ -25,37 +23,37 @@ header{
 	padding-right:15px;
 }
 
-.searchRow div{
-}
-
 .searchBar{
 margin-top: 12px;
-
+margin-right: 70px;
+border-radius: 5px;
 }
 
 .farmerCard{
     padding-top: 5px;
     text-align: center;
     height: 150px;
-	background-color: #fff;
-    opacity: 0.7;
-    margin: 20px 10px 0px 0px;
+	background-color: #fdf9ee;
     width: 100%;
     font-family: 'avenir', sans-serif;
+    color: #666;
+    border-radius: 5px;
 }
 
 .farmericon{
 	width: 100%;
 	height: 50px;
-	background-color: #59642b;
+	background-color: #90856c;
 	padding:5px;
+    margin-bottom: 20px;
 	text-align:center;
+    border-radius: 5px;
 }
 
 .searchResultsWrapper{
 	max-width: 100%;
-    padding: 30px 40px 50px 40px;
-	background-color:#999933;
+    padding: 30px 70px 50px 40px;
+	/*background-color:#999933;*/
 }
 
 .checkbox{
@@ -96,6 +94,7 @@ background-color: #333333;
 color: #fff;
 font-weight: 600;
 font-size: 30px;
+padding-left:60px;
 }
 
 .nav a{
@@ -117,7 +116,7 @@ padding-right: 20px;
 
 .active{
 font-weight: 600;
-color: #cc6633;
+color: #90856c;
 }
 
 .navbar ul{
@@ -127,12 +126,17 @@ list-style: none;
 }
 
 .filter{
-background-color: #cc6633;
+background-color: #90856c;
 color: #fff;
-padding: 15px;
-font-size: 60px;
-font-weight: 300;
+padding: 20px 20px 20px 30px;
+font-size: 30px;
+font-weight: 500;
 text-transform: uppercase;
+float: left;
+width: 250px;
+margin-right: 20px;
+margin-left: 60px;
+border-radius: 5px;
 }
 
 
@@ -164,7 +168,7 @@ font-weight: 300;
 }
 
 body a{
-color: #cc6633;
+color: #90856c;
 }
 
 body a:hover{
