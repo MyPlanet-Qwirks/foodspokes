@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html ng-app="jitteryApp">
+ <head>
+   <title>Jittery Joe's</title>
+   <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>  	
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
+ </head>
+ <body ng-controller="ReviewListCtrl">
+   
+<div class="background">
+     <!-- Header -->
+     <header>
+       <img src="images/logo.png" />
+       <h1>Jittery Joe's</h1>
+       <div class="slogan">
+         Really good coffee.
+       </div>
+           </header>
+           </div>
+
+		<!-- Blend Categories -->    
+	<div  id="pickCarousel"  class="col-md-12 bgtype">
+    	<div class="col-md-3"></div>
+		<a href="#allCarousel" class="btn col-md-2"><img src="images/all1.png" width=100><br></a>
+		<a href="#newCarousel" class="btn col-md-2"><img src="images/new1.png" width=100><br></a>
+		<a href="#topCarousel" class="btn col-md-2"><img src="images/best1.png" width=100><br></a>
+		<div class="col-md-3"></div>	
+    </div>
+    
+    <div class="bgmain">
+  
+	<!--  Coffee Carousel container-->
+	<div class=" col-md-12 bgslide">
+		<div class=" main-wrapper" >
+            <div id="allCarousel" class="carousel slide">  
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <div class="row">
+                            <div class="col-sm-1"><a href="#x"></a>
+                            </div>
+                            <div class="col-sm-2 blend-tab"><a href="#lionelRoastie"><img src="labels/lionel.jpg" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-2 blend-tab"><a href="#afterDinner"><img src="labels/1.jpg" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-2 blend-tab"><a href="#CNTowerOfPower"><img src="labels/2.jpg" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-2 blend-tab"><a href="#connoisseurEstates"><img src="labels/3.jpg" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-2 blend-tab"><a href="#columbian"><img src="labels/4.jpg" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-1"><a href="#x"></a>
+                            </div>
+                        </div>
+                        <!--/row-->
+                    </div>
+                    <!--/item-->
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-sm-1"><a href="#x"></a>
+                            </div>
+                            <div class="col-sm-2"><a href="#x"><img src="labels/2.jpg" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-2"><a href="#x"><img src="labels/7.jpg" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-2"><a href="#x"><img src="labels/5.jpg" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-2"><a href="#x"><img src="labels/1.jpg" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-2"><a href="#x"><img src="labels/3.jpg" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-1"><a href="#x"></a>
+                            </div>
+                        </div>
+                        <!--/row-->
+                    </div>
+                    <!--/item-->
+                </div>
+                <!--/carousel-inner--> <a class="left glyphicon glyphicon-chevron-left carousel-control" href="#allCarousel" data-slide="prev"></a>
+                <a class="right glyphicon glyphicon-chevron-right carousel-control" href="#allCarousel" data-slide="next"></a>
+            </div>
+            <!--/allCarousel-->
+            
+            <div id="newCarousel" class="carousel slide">  
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <div class="row">
+                            <div class="col-sm-1"><a href="#x"></a>
+                            </div>
+                            <div class="col-sm-2 blend-tab"><a href="#afterDinner"><img src="labels/1.jpg" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-2 blend-tab"><a href="#bourqueNewswatch"><img src="labels/2.jpg" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-2 blend-tab"><a href="#CNTowerOfPower"><img src="labels/3.jpg" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-2 blend-tab"><a href="#connoisseurEstates"><img src="labels/4.jpg" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-2 blend-tab"><a href="#columbian"><img src="labels/5.jpg" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-1"><a href="#x"></a>
+                            </div>
+                        </div>
+                        <!--/row-->
+                    </div>
+                    <!--/item-->
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-sm-1"><a href="#x"></a>
+                            </div>
+                            <div class="col-sm-2"><a href="#x"><img src="labels/toronto.jpg" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-2"><a href="#x"><img src="labels/3.jpg" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-2"><a href="#x"><img src="labels/2.jpg" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-2"><a href="#x"><img src="labels/lionel.jpg" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-2"><a href="#x"><img src="labels/1.jpg" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-1"><a href="#x"></a>
+                            </div>
+                        </div>
+                        <!--/row-->
+                    </div>
+                    <!--/item-->
+                </div>
+                <!--/carousel-inner--> <a class="left glyphicon glyphicon-chevron-left carousel-control" href="#newCarousel" data-slide="prev"></a>
+                <a class="right glyphicon glyphicon-chevron-right carousel-control" href="#newCarousel" data-slide="next"></a>
+            </div>
+            <!--/newCarousel-->
+            
+            <div id="topCarousel" class="carousel slide">  
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <div class="row">
+                            <div class="col-sm-1"><a href="#x"></a>
+                            </div>
+                            <div class="col-sm-2 blend-tab"><a href="#afterDinner"><img src="labels/lionel.jpg" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-2 blend-tab"><a href="#bourqueNewswatch"><img src="labels/2.jpg" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-2 blend-tab"><a href="#CNTowerOfPower"><img src="labels/3.jpg" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-2 blend-tab"><a href="#connoisseurEstates"><img src="labels/7.jpg" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-2 blend-tab"><a href="#columbian"><img src="labels/6.jpg" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-1"><a href="#x"></a>
+                            </div>
+                        </div>
+                        <!--/row-->
+                    </div>
+                    <!--/item-->
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-sm-1"><a href="#x"></a>
+                            </div>
+                            <div class="col-sm-2"><a href="#x"><img src="labels/6.jpg" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-2"><a href="#x"><img src="labels/1.jpg" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-2"><a href="#x"><img src="labels/6.jpg" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-2"><a href="#x"><img src="labels/6.jpg" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-2"><a href="#x"><img src="labels/6.jpg" alt="Image" class="img-responsive"></a>
+                            </div>
+                            <div class="col-sm-1"><a href="#x"></a>
+                            </div>
+                        </div>
+                        <!--/row-->
+                    </div>
+                    <!--/item-->
+                </div>
+                <!--/carousel-inner--> <a class="glyphicon glyphicon-chevron-left carousel-control" href="#topCarousel" data-slide="prev"></a>
+                <a class="glyphicon glyphicon-chevron-right carousel-control" href="#topCarousel" data-slide="next"></a>
+            </div>
+            <!--/topCarousel-->
+   			</div>
+ 		<!-- /well -->
+	</div>
+	<!-- /container -->
+
+	
+		<!-- Blend info tabs -->
+	<div class="blend-info" style="margin:auto;max-width:960px;">
+				<div id="lionelRoastie" class="col-md-12 blend">
+
+		<div class="row col-md-5">
+    <br><br><img src="images/lionel_p.png" alt="Image">
+
+    </div>
+	<div class="row col-md-7" style="padding-top:25px;">
+        <h1>Lionel Roastie</h1>
+        <h3>Rating: 5/5 <span class="glyphicon glyphicon-heart"></span></h3>
+        
+<h4>Characteristics: tart, earthy, strong, smooth finish</h4>
+        
+	<h4>Description</h4>
+	<p>Ice cream cookie cheesecake sweet roll chocolate cake sweet roll gummi bears. Cake lemon drops tiramisu fruitcake caramels. Cake gummies jelly-o sugar plum. Marzipan caramels chocolate cake caramels biscuit jujubes caramels. Bear claw jelly-o lollipop. Ice cream cotton candy lollipop applicake chocolate donut jujubes danish. Icing dragée marshmallow dragée carrot cake sugar plum gummi bears cookie pudding. Wafer gummies chocolate brownie chocolate topping sweet chocolate cake. 
+
+
+   </p><br>
+   
+   
+          <form name="ratingForm" ng-submit="addNewRating()">
+          <!--
+         <div class="review-item form-group col-md-4">
+           <label for="review-item-field">Choose a blend</label>
+           <select ng-model="review.item" name="review-item-field" id="review-item-field" class="review-item-field form-control">
+             <option name="afterDinner" value="After Dinner">After Dinner</option>
+             <option name="bourqueNewswatch" value="Bourque Newswatch">Bourque Newswatch</option>
+             <option name="CNTowerOfPower" value="CN Tower of Power">CN Tower of Power</option>
+             <option name="connoisseurEstates" value="Connoisseur Estates">Connoisseur Estates</option>
+             <option name="columbian" value="Columbian">Columbian</option>
+             <option name="dutchTrader" value="Dutch Trader">Dutch Trader</option>
+             <option name="fordnationBlend" value="Fordnation Blend">Fordnation Blend</option>
+             <option name="frenchRoast" value="French Roast">French Roast</option>
+             <option name="hawaiiKona" value="Hawaii Kona">Hawaii Kona</option>
+             <option name="houseBlend" value="House Blend">House Blend</option>
+             <option name="italianRoast" value="Italian Roast">Italian Roast</option>
+             <option name="lionelRoastie" value="Lionel Roastie">Lionel Roastie</option>
+             <option name="moccaJava" value="Mocca-Java">Mocca-Java</option>
+             <option name="reggaeBlend" value="Reggae Blend">Reggae Blend</option>
+             <option name="ruthRoast" value="Ruth Roast">Ruth Roast</option>
+             <option name="torontoBlend" value="Toronto Blend">Toronto Blend</option>
+             <option name="tropicOfCoffee" value="Tropic of Coffee">Tropic of Coffee</option>
+             <option name="worldTourBlend" value="World Tour Blend">World Tour Blend</option>
+           </select>
+         </div>-->
+         <h2>Reviews</h2>
+         <div class="review-rating form-group col-md-8">
+           <label>Blend rating</label>
+           <br />
+           <label ng-repeat="num in [1,2,3,4,5]">
+             <input ng-model="review.rating" type="radio" id="rating-{{num}}" name="review-rating-field" value="{{num}}">
+             {{num}}
+           </label>
+         </div>
+
+         
+         <div class="review-comment form-group col-md-12">
+           <label for="review-comment-field">Comment <span class="glyphicon glyphicon-comment" style="margin-left:2px;"></span></label>
+           <textarea ng-model="review.comment" rows="3" class="form-control" id="review-comment-field" name="Lionel Roastie"></textarea>
+         </div>
+         <div class="submit form-group col-md-12">
+           <button type="submit" class="btn btn-default pull-right">Send</button>
+         </div>
+       </form>
+   
+   
+   	
+     <!-- List reviews -->
+     <div class="row results-wrapper">									<!-- String name of blend-->
+       <div class="col-md-6 review" ng-repeat="review in reviews | filter:review.item='Lionel Roastie'">
+         <h4 class="review-item">{{review.item}}</h4>
+         -
+         <div class="review-rating">{{review.rating}}/5</div>
+         <div class="review-comment">{{review.comment}}</div>
+         <div class="review-date pull-right">{{ (review.node_created * 1000) | date: 'MMM d - h:mma' }}</div>
+       </div>
+     </div>
+    </div>
+    </div>
+		
+		<div id="afterDinner" class="col-md-12 blend">
+
+		<div class="row col-md-5">
+    <br><br><img src="http://www.cappuccinomachines.com.au/assets/template/americano_coffee.jpg" alt="Image">
+
+    </div>
+	<div class="row col-md-7" style="padding-top:25px;">
+        <h1>After Dinner</h1>
+        <h3>Rating: 4/5</h3>
+        
+<h4>Characteristics: tart, earthy, strong, smooth finish</h4>
+        
+	<h4>Description</h4>
+	<p>Ice cream cookie cheesecake sweet roll chocolate cake sweet roll gummi bears. Cake lemon drops tiramisu fruitcake caramels. Cake gummies jelly-o sugar plum. Marzipan caramels chocolate cake caramels biscuit jujubes caramels. Bear claw jelly-o lollipop. Ice cream cotton candy lollipop applicake chocolate donut jujubes danish. Icing dragée marshmallow dragée carrot cake sugar plum gummi bears cookie pudding. Wafer gummies chocolate brownie chocolate topping sweet chocolate cake. 
+
+
+   </p><br>
+             <form name="ratingForm" ng-submit="addNewRating()">
+          <!--
+         <div class="review-item form-group col-md-4">
+           <label for="review-item-field">Choose a blend</label>
+           <select ng-model="review.item" name="review-item-field" id="review-item-field" class="review-item-field form-control">
+             <option name="afterDinner" value="After Dinner">After Dinner</option>
+             <option name="bourqueNewswatch" value="Bourque Newswatch">Bourque Newswatch</option>
+             <option name="CNTowerOfPower" value="CN Tower of Power">CN Tower of Power</option>
+             <option name="connoisseurEstates" value="Connoisseur Estates">Connoisseur Estates</option>
+             <option name="columbian" value="Columbian">Columbian</option>
+             <option name="dutchTrader" value="Dutch Trader">Dutch Trader</option>
+             <option name="fordnationBlend" value="Fordnation Blend">Fordnation Blend</option>
+             <option name="frenchRoast" value="French Roast">French Roast</option>
+             <option name="hawaiiKona" value="Hawaii Kona">Hawaii Kona</option>
+             <option name="houseBlend" value="House Blend">House Blend</option>
+             <option name="italianRoast" value="Italian Roast">Italian Roast</option>
+             <option name="lionelRoastie" value="Lionel Roastie">Lionel Roastie</option>
+             <option name="moccaJava" value="Mocca-Java">Mocca-Java</option>
+             <option name="reggaeBlend" value="Reggae Blend">Reggae Blend</option>
+             <option name="ruthRoast" value="Ruth Roast">Ruth Roast</option>
+             <option name="torontoBlend" value="Toronto Blend">Toronto Blend</option>
+             <option name="tropicOfCoffee" value="Tropic of Coffee">Tropic of Coffee</option>
+             <option name="worldTourBlend" value="World Tour Blend">World Tour Blend</option>
+           </select>
+         </div>-->
+         <h2>Reviews</h2>
+         <div class="review-rating form-group col-md-8">
+           <label>Blend rating</label>
+           <br />
+           <label ng-repeat="num in [1,2,3,4,5]">
+             <input ng-model="review.rating" type="radio" id="rating-{{num}}" name="review-rating-field" value="{{num}}">
+             {{num}}
+           </label>
+         </div>
+
+         
+         <div class="review-comment form-group col-md-12">
+           <label for="review-comment-field">Comment <span class="glyphicon glyphicon-comment" style="margin-left:2px;"></span></label>
+           <textarea ng-model="review.comment" rows="3" class="form-control" id="review-comment-field" name="Lionel Roastie"></textarea>
+         </div>
+         <div class="submit form-group col-md-12">
+           <button type="submit" class="btn btn-default pull-right">Send</button>
+         </div>
+       </form>
+   
+   
+   	
+     <!-- List reviews -->
+     <div class="row results-wrapper">									<!-- String name of blend-->
+       <div class="col-md-6 review" ng-repeat="review in reviews | filter:review.item='Lionel Roastie'">
+         <h4 class="review-item">{{review.item}}</h4>
+         -
+         <div class="review-rating">{{review.rating}}/5</div>
+         <div class="review-comment">{{review.comment}}</div>
+         <div class="review-date pull-right">{{ (review.node_created * 1000) | date: 'MMM d - h:mma' }}</div>
+       </div>
+     </div>
+    		</div>
+		</div>
+    	
+	
+	
+		<!-- test tab2-->
+		<div id="bourqueNewswatch" class="col-md-12 blend">
+			<div class="row col-md-4">
+    		<h1>Bourque Newswatch</h1>
+    			<ul>
+	   				<li> hi</li>
+   	 				<li> hi</li>
+   	 				<li> hi</li>
+    			</ul>
+    		</div>
+			<div class="row col-md-8" style="padding-top:20px;">
+			<p>Ice cream cookie cheesecake sweet roll chocolate cake sweet roll gummi bears. Cake lemon drops tiramisu fruitcake caramels. Cake gummies jelly-o sugar plum. Marzipan caramels chocolate cake caramels biscuit jujubes caramels. Bear claw jelly-o lollipop. Ice cream cotton candy lollipop applicake chocolate donut jujubes danish. Icing dragée marshmallow dragée carrot cake sugar plum gummi bears cookie pudding. Wafer gummies chocolate brownie chocolate topping sweet chocolate cake. Dessert bonbon cookie cake jelly-o ice cream cake caramels. Lemon drops chocolate cake lollipop topping wafer oat cake. Pie tootsie roll applicake chupa chups marshmallow macaroon. Wafer lemon drops donut apple pie toffee. Caramels apple pie chocolate jelly tart.
+
+    Cheesecake gingerbread oat cake candy sugar plum sugar plum caramels cake. Pie cupcake sugar plum tart chocolate cake. Powder chupa chups sugar plum macaroon. Marshmallow tiramisu jelly beans marzipan jelly-o oat cake topping sugar plum. Sesame snaps danish liquorice sweet tootsie roll. Wafer chocolate bar tiramisu icing chocolate.
+			</p>
+    		</div>
+		</div>
+		
+		<!-- test tab3-->
+		<div id="CNTowerOfPower" class="col-md-12 blend">
+			<div class="row col-md-4">
+    		<h1>CN Tower of Power</h1>
+    			<ul>
+	   				<li> hi</li>
+   	 				<li> hi</li>
+   	 				<li> hi</li>
+    			</ul>
+    		</div>
+			<div class="row col-md-8" style="padding-top:20px;">
+			<p>Ice cream cookie cheesecake sweet roll chocolate cake sweet roll gummi bears. Cake lemon drops tiramisu fruitcake caramels. Cake gummies jelly-o sugar plum. Marzipan caramels chocolate cake caramels biscuit jujubes caramels. Bear claw jelly-o lollipop. Ice cream cotton candy lollipop applicake chocolate donut jujubes danish. Icing dragée marshmallow dragée carrot cake sugar plum gummi bears cookie pudding. Wafer gummies chocolate brownie chocolate topping sweet chocolate cake. Dessert bonbon cookie cake jelly-o ice cream cake caramels. Lemon drops chocolate cake lollipop topping wafer oat cake. Pie tootsie roll applicake chupa chups marshmallow macaroon. Wafer lemon drops donut apple pie toffee. Caramels apple pie chocolate jelly tart.
+
+    Cheesecake gingerbread oat cake candy sugar plum sugar plum caramels cake. Pie cupcake sugar plum tart chocolate cake. Powder chupa chups sugar plum macaroon. Marshmallow tiramisu jelly beans marzipan jelly-o oat cake topping sugar plum. Sesame snaps danish liquorice sweet tootsie roll. Wafer chocolate bar tiramisu icing chocolate.
+			</p>
+    		</div>
+		</div>
+	
+		<!-- test tab3-->
+		<div id="connoisseurEstates" class="col-md-12 blend">
+			<div class="row col-md-4">
+    		<h1>Connoisseur Estates</h1>
+    			<ul>
+	   				<li> hi</li>
+   	 				<li> hi</li>
+   	 				<li> hi</li>
+    			</ul>
+    		</div>
+			<div class="row col-md-8" style="padding-top:20px;">
+			<p>Ice cream cookie cheesecake sweet roll chocolate cake sweet roll gummi bears. Cake lemon drops tiramisu fruitcake caramels. Cake gummies jelly-o sugar plum. Marzipan caramels chocolate cake caramels biscuit jujubes caramels. Bear claw jelly-o lollipop. Ice cream cotton candy lollipop applicake chocolate donut jujubes danish. Icing dragée marshmallow dragée carrot cake sugar plum gummi bears cookie pudding. Wafer gummies chocolate brownie chocolate topping sweet chocolate cake. Dessert bonbon cookie cake jelly-o ice cream cake caramels. Lemon drops chocolate cake lollipop topping wafer oat cake. Pie tootsie roll applicake chupa chups marshmallow macaroon. Wafer lemon drops donut apple pie toffee. Caramels apple pie chocolate jelly tart.
+
+    Cheesecake gingerbread oat cake candy sugar plum sugar plum caramels cake. Pie cupcake sugar plum tart chocolate cake. Powder chupa chups sugar plum macaroon. Marshmallow tiramisu jelly beans marzipan jelly-o oat cake topping sugar plum. Sesame snaps danish liquorice sweet tootsie roll. Wafer chocolate bar tiramisu icing chocolate.
+			</p>
+    		</div>
+		</div>
+		
+		<!-- test tab3-->
+		<div id="columbian" class="col-md-12 blend">
+			<div class="row col-md-4">
+    		<h1>Columbian</h1>
+    			<ul>
+	   				<li> hi</li>
+   	 				<li> hi</li>
+   	 				<li> hi</li>
+    			</ul>
+    		</div>
+			<div class="row col-md-8" style="padding-top:20px;">
+			<p>Ice cream cookie cheesecake sweet roll chocolate cake sweet roll gummi bears. Cake lemon drops tiramisu fruitcake caramels. Cake gummies jelly-o sugar plum. Marzipan caramels chocolate cake caramels biscuit jujubes caramels. Bear claw jelly-o lollipop. Ice cream cotton candy lollipop applicake chocolate donut jujubes danish. Icing dragée marshmallow dragée carrot cake sugar plum gummi bears cookie pudding. Wafer gummies chocolate brownie chocolate topping sweet chocolate cake. Dessert bonbon cookie cake jelly-o ice cream cake caramels. Lemon drops chocolate cake lollipop topping wafer oat cake. Pie tootsie roll applicake chupa chups marshmallow macaroon. Wafer lemon drops donut apple pie toffee. Caramels apple pie chocolate jelly tart.
+
+    Cheesecake gingerbread oat cake candy sugar plum sugar plum caramels cake. Pie cupcake sugar plum tart chocolate cake. Powder chupa chups sugar plum macaroon. Marshmallow tiramisu jelly beans marzipan jelly-o oat cake topping sugar plum. Sesame snaps danish liquorice sweet tootsie roll. Wafer chocolate bar tiramisu icing chocolate.
+			</p>
+    		</div>
+		</div>
+	
+	</div>
+	<!-- /Blend info tabs -->
+
+   <!-- Load things -->
+   <!-- Angular CDN -->
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
+
+   <!-- Bootstrap CDN -->
+   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
+
+   <!-- Google fonts -->
+   <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300' rel='stylesheet' type='text/css'>
+
+
+	<!-- Jquery & Bootstrap js-->
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+   <!-- Custom JS -->
+   <script src="js/app.js"></script>
+
+   <!-- Custom stylesheet -->
+   <link rel="stylesheet" href="style.css" />
+  
+ </body>
+</html>
