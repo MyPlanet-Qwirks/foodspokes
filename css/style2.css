@@ -202,12 +202,12 @@ padding-top: 30px;
 
 /* Modal Styles */
 .modal a{
-	color:#cc6633;
+	color:#90856c;
 
 }
 
 .modal a:hover{
-	color:#AD5122;
+	color:#666;
 }
 
 .modal h4{
@@ -221,7 +221,7 @@ padding-top: 30px;
 
 .modal-header{
     font-family: 'avenir', sans-serif;
-	background:#59642b;
+	background:#90856c;
 	color:white;
 	-webkit-border-top-left-radius: 5px;
 	-webkit-border-top-right-radius: 5px;
@@ -234,11 +234,11 @@ padding-top: 30px;
 
 .modal-body{
     font-family: 'avenir', sans-serif;
-	background:#e0e0c1;
+	background:#fdf9ee;
 }
 
 .modal-footer{
-	background:#e0e0c1;
+	background:#fdf9ee;
 	padding:0 20px 20px 0;
 	border:none;
 	-webkit-border-bottom-right-radius: 5px;
