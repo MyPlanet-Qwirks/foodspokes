@@ -73,7 +73,6 @@ padding: 10px;
 /* navigation */
 .navbar{
     background-color: #333333;
-    text-transform: uppercase;
     padding-left: 10px;
     border-radius: 0px;
     text-align: center;
@@ -131,7 +130,6 @@ color: #fff;
 padding: 20px 20px 20px 30px;
 font-size: 30px;
 font-weight: 500;
-text-transform: uppercase;
 float: left;
 width: 250px;
 margin-right: 20px;
@@ -148,7 +146,6 @@ font-size: 26px;
 h2{
 font-size: 24px;
 font-weight: 600;
-text-transform: uppercase;
 }
 
 h3{
@@ -177,6 +174,7 @@ text-decoration: none;
 }
 
 footer{
+font-family: 'avenir', sans-serif;
 background-color: #333333;
 width: 100%;
 color: #fff;
