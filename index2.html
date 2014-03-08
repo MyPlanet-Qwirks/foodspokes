@@ -20,7 +20,7 @@
     
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
 	
@@ -28,8 +28,9 @@
 </head>
 <body ng-app="FarmerApp" ng-controller="FarmerCtrl">
 <!-- <script src="js/jquery.pageslide.min.js"></script> -->
+    
 
-    <div class="wrapper">
+    <div class="wrapper">       
 		<nav class="navbar wrapper" role="navigation">
 		    
 		    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -44,17 +45,18 @@
             </ul>
             
 		    <!-- Brand and toggle get grouped for better mobile display -->
-		    <div class="navbar-right">
-                <input class="searchBar" type="text" ng-model="search.$" placeholder="search"/>
-		    </div>
 		</nav>
 	                                                                                                   
                                                                                                        
 	</div>
 	<div class="row wrapper searchResultsWrapper" >
-      <div class="searchRow filter col-md-3">
+
+      <div class="sidenav searchRow filter col-md-3">
+        <input class="searchBar" type="text" ng-model="search.$" placeholder="search"/>
+          
 		<form>
-            CATEGORY
+            <div class="category">
+            <h3>CATEGORY</h3>
 				<div class="checkbox">
 					<label><input name = "categoryCheck" id="fruit_chk"  type="checkbox" ng-model="search.$" ng-true-value="fruit" ng-false-value="" />
                         <img src="img/fruit_st.png" width="30">&nbsp;fruit</label><br/>
@@ -68,20 +70,24 @@
                         <img src="img/grain_st.png" width="30">&nbsp;grain</label><br/>
 					<label><input name = "categoryCheck" id="wine_chk" type="checkbox" ng-model="search.$" ng-true-value="wine" ng-false-value="" />
                         <img src="img/wine_st.png" width="30">&nbsp;wine</label><br/>
-				</div>
-            </form>
-    </div>
-        
+                    <label><input name = "categoryCheck" id="spice" type="checkbox" ng-model="search.$" ng-true-value="wine" ng-false-value="" />
+                        <img src="img/spice.png" width="30">&nbsp;spices</label><br/>
+                </div>
+            </div>
+        </form>
+       </div> 
         
         <div class="col-md-3"  ng-repeat="farmer in farmers | filter:search ">
-            <div class="farmerCard">
-			<h3>{{farmer.node_title}}</h3>
-			<div>{{farmer.location}}</div>
-            </><a class="btn btn-default" style="margin-top:5px;" data-toggle="modal" data-target="#farm_modal{{$index}}">Details</a>
-		    </div>
+            <a href data-toggle="modal" data-target="#farm_modal{{$index}}">
+                <div class="farmerCard">
+                    <h3>{{farmer.node_title}}</h3>
+                    <div>{{farmer.location}}</div>
+                </div>
+                
 			<div class="farmericon">
 				<img ng-repeat="category in farmer.category" src="img/{{category}}_st.png" width="40">
 			</div>
+            </a>
 			
 			<div class="modal fade" id="farm_modal{{$index}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			  <div class="modal-dialog">
