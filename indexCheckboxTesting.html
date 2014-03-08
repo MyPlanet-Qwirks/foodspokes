@@ -24,6 +24,22 @@
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
 	
+	<script>
+		function SendToSearch(categoryId)
+		{
+			var checkIfTicked = document.getElementById(categoryId).checked;
+			alert("function called");
+			
+			if(checkIfTicked)
+			{
+				
+				var categoryValue = document.getElementById(categoryId).value;alert(categoryValue);
+				var searchValue = document.getElementById("searchBar");
+				searchValue.value = categoryValue + " ";
+			}
+		}
+	</script>
+	
 	
 </head>
 <body ng-app="FarmerApp" ng-controller="FarmerCtrl">
@@ -45,7 +61,7 @@
             
 		    <!-- Brand and toggle get grouped for better mobile display -->
 		    <div class="navbar-right">
-                <input class="searchBar" type="text" ng-model="search.$" placeholder="search"/>
+                <input class="searchBar" id="searchBar" type="text" ng-model="search.$" onchange="updateInput(this.value)" placeholder="search farm(er) data"/>
 		      <button type="button" style="margin-right:15px;margin-left:-5px;">
 		        <span class="glyphicon glyphicon-search"></span>
 		      </button>
@@ -60,20 +76,20 @@
             </div>
             <div class="col-md-2">
 				<div class="checkbox">
-					<label><input id="fruit_chk"  type="checkbox" ng-model="search.$" ng-true-value="fruit" /><img src="img/fruit_st.png" width="30">&nbsp;Fruit</label><br/>
-					<label><input id="veg_chk" type="checkbox" ng-model="search.$" ng-true-value="vegetable"/><img src="img/vegetable_st.png" width="30">&nbsp;Vegetables</label><br/>
+					<label><input id="fruit_chk"  type="checkbox" value ="fruit" onchange="SendToSearch('fruit_chk')" /><img src="img/fruit_st.png" width="30">&nbsp;Fruit</label><br/>
+					<label><input id="veg_chk" type="checkbox" /><img src="img/vegetable_st.png" width="30">&nbsp;Vegetables</label><br/>
 				</div>
 			</div>
 			<div class="col-md-2">
 				<div class="checkbox">
-					<label><input id="dairy_chk" type="checkbox" ng-model="search.$" ng-true-value="dairy"/><img src="img/dairy_st.png" width="30">&nbsp;Dairy</label><br/>
-					<label><input id="meat_chk" type="checkbox" ng-model="search.$" ng-true-value="meat"/><img src="img/meat_st.png" width="30">&nbsp;Meat</label><br/>
+					<label><input id="dairy_chk" type="checkbox"  /><img src="img/dairy_st.png" width="30">&nbsp;Dairy</label><br/>
+					<label><input id="meat_chk" type="checkbox"" /><img src="img/meat_st.png" width="30">&nbsp;Meat</label><br/>
 				</div>
 			</div>
 			<div class="col-md-2">
 				<div class="checkbox">
-					<label><input id="grain_chk" type="checkbox" ng-model="search.$" ng-true-value="grain"/><img src="img/grain_st.png" width="30">&nbsp;Grain</label><br/>
-					<label><input id="wine_chk" type="checkbox" ng-model="search.$" ng-true-value="wine"/><img src="img/wine_st.png" width="30">&nbsp;Wine</label><br/>
+					<label><input id="grain_chk" type="checkbox" /><img src="img/grain_st.png" width="30">&nbsp;Grain</label><br/>
+					<label><input id="wine_chk" type="checkbox" /><img src="img/wine_st.png" width="30">&nbsp;Wine</label><br/>
 				</div>
 			</div>
 		</form>
