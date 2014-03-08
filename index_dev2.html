@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<title>Foodspokes || Find</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<!--<link rel="stylesheet" href="css/jquery.pageslide.css">-->
+	
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+	
+	
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700' rel='stylesheet' type='text/css'>
+	<!-- Custom Styles -->
+	<link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/component2.css" />
+    <script src="js/modernizr.custom.js"></script>
+    
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+	
+	
+</head>
+<body ng-app="FarmerApp" ng-controller="FarmerCtrl">
+<!-- <script src="js/jquery.pageslide.min.js"></script> -->
+
+    <div class="wrapper">
+		<nav class="navbar wrapper" role="navigation">
+		    
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+            <ul class="nav navbar-nav color-4">
+                <nav class="cl-effect-4">
+                <a href="#" class="home"><img src="img/logo.png" width="33">&nbsp;Foodspokes</a>
+                <a href="#">Home</span></a>
+                <a href="#">About</span></a>
+                <a href="#">Contact</span></a>
+                <a href="#" class="active">Find</span></a>
+                </nav>
+            </ul>
+            
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    <div class="navbar-right">
+                <input class="searchBar" type="text" ng-model="search.$" placeholder="search"/>
+		    </div>
+		</nav>
+	                                                                                                   
+                                                                                                       
+	</div>
+	<div class="row wrapper searchResultsWrapper" >
+      <div class="searchRow filter col-md-3">
+		<form>
+            FIND
+				<div class="checkbox">
+					<label><input name = "categoryCheck" id="fruit_chk"  type="checkbox" ng-model="search.$" ng-true-value="fruit" ng-false-value="" />
+                        <img src="img/fruit_st.png" width="30">&nbsp;Fruit</label><br/>
+					<label><input name = "categoryCheck" id="veg_chk" type="checkbox" ng-model="search.$" ng-true-value="vegetable" ng-false-value="" />
+                        <img src="img/vegetable_st.png" width="30">&nbsp;Vegetables</label><br/>
+					<label><input name = "categoryCheck" id="dairy_chk" type="checkbox" ng-model="search.$" ng-true-value="dairy" ng-false-value="" />
+                        <img src="img/dairy_st.png" width="30">&nbsp;Dairy</label><br/>
+					<label><input name = "categoryCheck" id="meat_chk" type="checkbox" ng-model="search.$" ng-true-value="meat" ng-false-value="" />
+                        <img src="img/meat_st.png" width="30">&nbsp;Meat</label><br/>
+					<label><input name = "categoryCheck" id="grain_chk" type="checkbox" ng-model="search.$" ng-true-value="grain" ng-false-value="" />
+                        <img src="img/grain_st.png" width="30">&nbsp;Grain</label><br/>
+					<label><input name = "categoryCheck" id="wine_chk" type="checkbox" ng-model="search.$" ng-true-value="wine" ng-false-value="" />
+                        <img src="img/wine_st.png" width="30">&nbsp;Wine</label><br/>
+				</div>
+            </form>
+    </div>
+        
+        
+        <div class="col-md-3"  ng-repeat="farmer in farmers | filter:search ">
+            <div class="farmerCard">
+			<h3>{{farmer.node_title}}</h3>
+			<div>{{farmer.location}}</div>
+            </><a class="btn btn-default" style="margin-top:5px;" data-toggle="modal" data-target="#farm_modal{{$index}}">Details</a>
+		    </div>
+			<div class="farmericon">
+				<img ng-repeat="category in farmer.category" src="img/{{category}}_st.png" width="40">
+			</div>
+			
+			<div class="modal fade" id="farm_modal{{$index}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h3 class="modal-title" id="myModalLabel">{{farmer.node_title}}</h3>
+				  </div>
+				  <div class="modal-body">
+					<div class="general-info">
+						{{farmer.address.thoroughfare}}</br>
+						{{farmer.address.locality}}, {{farmer.address.administrative_area}}</br>
+						{{farmer.address.postal_code}}<br>
+						TEL: (905) 000-0000</br>
+						<a href="{{farmer.website}}">{{farmer.website}}</a>
+						<!--
+						<div class="modal-social">
+							<a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
+							<a href="#"><i class="fa fa-twitter-square fa-2x"></i></a>
+							<a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
+						</div>
+						-->
+					</div>
+					<div class="product-info">
+					<br></></><h4>Product Types:</h4>
+						<ul>
+							<li ng-repeat="category in farmer.category" style="text-transform:capitalize;">{{category}}</li>
+						</ul>
+					</div>
+					<br></><div class="availability-info">
+						<h4>Availability:</h4>
+						<a href="#">Download PDF</a>
+					</div>
+					<br></><div class="invoice-info">
+						<h4>Invoice Style:</h4>
+						<ul>
+							<li ng-repeat="invoice in farmer.invoice_style">{{invoice}}</li>
+						</ul>
+					</div>
+				  </div>
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				  </div>
+				</div>
+			  </div> 
+			</div>
+        </div>  
+
+		<script>
+		var app = angular.module('FarmerApp',[]);
+		
+		app.controller('FarmerCtrl', function($scope, $http){
+			$http({method: 'GET', url: 'http://dev-foodspokes.gotpantheon.com/api/farmers.json'}).success(function(data){
+				$scope.farmers = data; // response data 
+			
+			});
+		});
+	
+	
+		</script>		
+
+        
+	</div>
+        
+<footer class="wrapper">
+	<div class="col-md-3 profile">
+		<img src="img/vanessa.png">
+		<br>Vanessa Ling Yu
+	</div>
+    
+    <div class="col-md-5 footerinfo">
+		<p>Vanessa brings expertise in the areas of health and hospitality as Founder of FoodSpokes. Her experiences in    creating meaningful engagement and integrating complex and diverse ideas inform her participatory approaches to building collaborative stakeholder initiatives. </p>
+		<p>Prior to starting FoodSpokes, Vanessa received graduate degrees from the University of Toronto and University of Chicago and worked as a consultant for a number of local, provincial, and international organizations. </p>
+    </div>
+    
+    <div class="col-md-1"></div>
+    
+    <div class="col-md-3 footerinfo">
+		<br><br>215 Spadina Avenue
+		<br>Centre for Social Innovation
+		<a href="mailto:info@foodspokes.com" target="_top">info@foodspokes.com</a>
+		
+		<div class="socialmedia">
+		<br><a href="https://twitter.com/FoodSpokes"><i class="fa fa-twitter"></i></a>
+			<a href="#"><i class="fa fa-facebook"></i></a>
+		</div>
+    </div>
+</footer>
+</div>
+</body>
+</html>
