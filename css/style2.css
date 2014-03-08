@@ -35,7 +35,7 @@ border-radius: 5px;
     height: 150px;
 	background-color: #fdf9ee;
     width: 100%;
-    font-family: 'avenir', sans-serif;
+    font-family: 'source sans pro', sans-serif;
     color: #666;
     border-radius: 5px;
 }
@@ -125,6 +125,7 @@ list-style: none;
 }
 
 .filter{
+font-family: 'source sans pro', sans-serif;
 background-color: #90856c;
 color: #fff;
 padding: 20px 20px 20px 30px;
@@ -218,7 +219,7 @@ padding-top: 30px;
 }
 
 .modal-header{
-    font-family: 'avenir', sans-serif;
+    font-family: 'source sans pro', sans-serif;
 	background:#90856c;
 	color:white;
 	-webkit-border-top-left-radius: 5px;
@@ -231,7 +232,7 @@ padding-top: 30px;
 }
 
 .modal-body{
-    font-family: 'avenir', sans-serif;
+    font-family: 'source sans pro', sans-serif;
 	background:#fdf9ee;
 }
 
