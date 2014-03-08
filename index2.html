@@ -60,8 +60,8 @@
 				<div class="checkbox">
 					<label><input name = "categoryCheck" id="fruit_chk"  type="checkbox" ng-model="search.$" ng-true-value="fruit" ng-false-value="" />
                         <img src="img/fruit_st.png" width="30">&nbsp;fruit</label><br/>
-					<label><input name = "categoryCheck" id="veg_chk" type="checkbox" ng-model="search.$" ng-true-value="vegetable" ng-false-value="" />
-                        <img src="img/vegetable_st.png" width="30">&nbsp;vegetables</label><br/>
+					<label><input name = "categoryCheck" id="veg_chk" type="checkbox" ng-model="search.$" ng-true-value="vegetables" ng-false-value="" />
+                        <img src="img/vegetables_st.png" width="30">&nbsp;vegetables</label><br/>
 					<label><input name = "categoryCheck" id="dairy_chk" type="checkbox" ng-model="search.$" ng-true-value="dairy" ng-false-value="" />
                         <img src="img/dairy_st.png" width="30">&nbsp;dairy</label><br/>
 					<label><input name = "categoryCheck" id="meat_chk" type="checkbox" ng-model="search.$" ng-true-value="meat" ng-false-value="" />
@@ -70,8 +70,8 @@
                         <img src="img/grain_st.png" width="30">&nbsp;grain</label><br/>
 					<label><input name = "categoryCheck" id="wine_chk" type="checkbox" ng-model="search.$" ng-true-value="wine" ng-false-value="" />
                         <img src="img/wine_st.png" width="30">&nbsp;wine</label><br/>
-                    <label><input name = "categoryCheck" id="spice" type="checkbox" ng-model="search.$" ng-true-value="wine" ng-false-value="" />
-                        <img src="img/spice.png" width="30">&nbsp;spices</label><br/>
+                    <label><input name = "categoryCheck" id="spice" type="checkbox" ng-model="search.$" ng-true-value="spices" ng-false-value="" />
+                        <img src="img/spices.png" width="30">&nbsp;spices</label><br/>
                 </div>
             </div>
         </form>
@@ -98,15 +98,18 @@
 				  </div>
 				  <div class="modal-body">
 					<div class="general-info">
-						100 Address Road</br>
-						Toronto, ON M56 3A9</br>
+						{{farmer.address.thoroughfare}}</br>
+						{{farmer.address.locality}}, {{farmer.address.administrative_area}}</br>
+						{{farmer.address.postal_code}}<br>
 						TEL: (905) 000-0000</br>
-						<a href>{{farmer.website}}</a>
+						<a href="{{farmer.website}}">{{farmer.website}}</a>
+						<!--
 						<div class="modal-social">
 							<a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
 							<a href="#"><i class="fa fa-twitter-square fa-2x"></i></a>
 							<a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
 						</div>
+						-->
 					</div>
 					<div class="product-info">
 					<br></></><h4>Product Types:</h4>
@@ -116,18 +119,7 @@
 					</div>
 					<br></><div class="availability-info">
 						<h4>Availability:</h4>
-						<ul>
-							<li>Mondays
-							<ul>
-								<li>Toronto: 11am - 5pm</li>
-							</ul>
-							</li>
-							<li>Tuesdays
-							<ul>
-								<li>Waterloo: 10am - 4pm</li>
-							</ul>
-							</li>
-						</ul>
+						<a href="#">Download PDF</a>
 					</div>
 					<br></><div class="invoice-info">
 						<h4>Invoice Style:</h4>
