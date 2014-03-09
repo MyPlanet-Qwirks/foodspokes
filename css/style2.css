@@ -199,6 +199,25 @@ font-size: 40px;
 padding-top: 30px;
 }
 
+/* ABOUT */
+.about{
+}
+
+.aboutprofile{
+margin-top:20px;
+font-size: 24px;
+text-align: center;
+}
+
+.aboutsocialmedia{
+font-size: 40px;
+}   
+
+.aboutinfo{
+padding-top: 30px;
+}
+
+
 /* Modal Styles */
 .modal a{
 	color:#90856c;
