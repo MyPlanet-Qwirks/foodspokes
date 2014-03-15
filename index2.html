@@ -46,12 +46,7 @@
             </ul>
             
 		    <!-- Brand and toggle get grouped for better mobile display -->
-<<<<<<< HEAD
-		    <div class="navbar-right">
-                <input class="searchBar" type="text" ng-model="search.$" placeholder=" Search"/>
-		    </div>
-=======
->>>>>>> FETCH_HEAD
+
 		</nav>
 	                                                                                                   
                                                                                                        
@@ -65,19 +60,19 @@
             <h3>CATEGORY</h3>
 				<div class="checkbox">
                     <form>
-					<label><input name = "categoryCheck" id="fruit_chk"  type="checkbox" ng-model="search.$" ng-true-value="fruit" ng-false-value="" />
+					<label><input name = "categoryCheck" id="fruit_chk"  type="checkbox" ng-model="chk.t1" ng-true-value="fruit" ng-false-value="" />
                         <img src="img/fruit_st.png" width="30">&nbsp;fruit</label><br/>
-					<label><input name = "categoryCheck" id="veg_chk" type="checkbox" ng-model="search.$" ng-true-value="vegetable" ng-false-value="" />
+					<label><input name = "categoryCheck" id="veg_chk" type="checkbox" ng-model="chk.t2" ng-true-value="vegetable" ng-false-value="" />
                         <img src="img/vegetables_st.png" width="30">&nbsp;vegetables</label><br/>
-					<label><input name = "categoryCheck" id="dairy_chk" type="checkbox" ng-model="search.$" ng-true-value="dairy" ng-false-value="" />
+					<label><input name = "categoryCheck" id="dairy_chk" type="checkbox" ng-model="chk.t3" ng-true-value="dairy" ng-false-value="" />
                         <img src="img/dairy_st.png" width="30">&nbsp;dairy</label><br/>
-					<label><input name = "categoryCheck" id="meat_chk" type="checkbox" ng-model="search.$" ng-true-value="meat" ng-false-value="" />
+					<label><input name = "categoryCheck" id="meat_chk" type="checkbox" ng-model="chk.t4" ng-true-value="meat" ng-false-value="" />
                         <img src="img/meat_st.png" width="30">&nbsp;meat</label><br/>
-					<label><input name = "categoryCheck" id="grain_chk" type="checkbox" ng-model="search.$" ng-true-value="grain" ng-false-value="" />
+					<label><input name = "categoryCheck" id="grain_chk" type="checkbox" ng-model="chk.t5" ng-true-value="grain" ng-false-value="" />
                         <img src="img/grain_st.png" width="30">&nbsp;grain</label><br/>
-					<label><input name = "categoryCheck" id="wine_chk" type="checkbox" ng-model="search.$" ng-true-value="wine" ng-false-value="" />
+					<label><input name = "categoryCheck" id="wine_chk" type="checkbox" ng-model="chk.t6" ng-true-value="wine" ng-false-value="" />
                         <img src="img/wine_st.png" width="30">&nbsp;wine</label><br/>
-                    <label><input name = "categoryCheck" id="spice" type="checkbox" ng-model="search.$" ng-true-value="wine" ng-false-value="" />
+                    <label><input name = "categoryCheck" id="spice" type="checkbox" ng-model="chk.t7" ng-true-value="spices" ng-false-value="" />
                         <img src="img/spices.png" width="30">&nbsp;spices</label><br/>
                 </div>
             </div>
@@ -86,7 +81,7 @@
             </div>
         
         <div class="col-sm-9">
-        <div class="col-md-4"  ng-repeat="farmer in farmers | filter:search ">
+        <div class="col-md-4"  ng-repeat="farmer in farmers | filter:search | filter:chk.t1 | filter:chk.t2 | filter:chk.t3 | filter:chk.t4 | filter:chk.t5 | filter:chk.t6 | filter:chk.t7">
             <a href data-toggle="modal" data-target="#farm_modal{{$index}}">
                 <div class="farmerCard">
                     <h3>{{farmer.node_title}}</h3>
@@ -112,7 +107,7 @@
 						{{farmer.address.postal_code}}<br>
 						Tel: {{farmer.phone}}</br>
 						Email: {{farmer.email}}<br/>
-						<a href="{{farmer.website}}">{{farmer.website}}</a>
+						Website: <a href="{{farmer.website}}">{{farmer.website}}</a>
 						<!--
 						<div class="modal-social">
 							<a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
