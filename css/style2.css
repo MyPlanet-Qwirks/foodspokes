@@ -24,9 +24,14 @@ header{
 }
 
 .searchBar{
+width: 170px;
+height: 30px;	
 margin-top: 12px;
 margin-right: 70px;
-border-radius: 5px;
+border-radius: 8px;
+border-style: none;
+
+font-size: 14px;
 }
 
 .farmerCard{
@@ -84,7 +89,7 @@ width: 100%;
 }
 
 .nav{
-font-family: 'avenir', sans-serif;
+font-family: 'Source Sans Pro', sans-serif;
 color: #fff;
 background-color: #333333;
 }
