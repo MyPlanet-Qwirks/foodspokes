@@ -125,11 +125,21 @@
 						<ul>
 							<li ng-repeat="category in farmer.category" style="text-transform:capitalize;">{{category}}</li>
 						</ul>
-						<a href="">See all products</a>
+						<h4>Products:</h4>
+						<ul class="products-list">
+							<li ng-repeat="product in farmer.product_list_2">
+								{{product}}
+							</li>
+						</ul>
+						<!-- <a href="">See all products</a> -->
 					</div>
 					<br></><div class="availability-info">
 						<h4>Availability:</h4>
-						<a href="#">Download PDF</a>
+						<ul>
+							<li ng-repeat="schedule_item in farmer.delivery_schedule_2">
+								{{schedule_item}}
+							</li>
+						</ul>
 					</div>
 					<br></><div class="invoice-info">
 						<h4>Invoice Style:</h4>

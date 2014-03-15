@@ -274,3 +274,9 @@ padding-top: 30px;
 	border-bottom-left-radius: 5px;
 	margin:0;
 }
+
+.products-list {
+  columns: 3;
+  -webkit-columns: 3;
+  -moz-columns: 3;
+}
