@@ -13,15 +13,40 @@ body {
 nav a {
 	position: relative;
 	display: inline-block;
-	margin: 15px 25px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 	outline: none;
-	color: #fff;
+
 	text-decoration: none;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	font-weight: 400;
-	text-shadow: 0 0 1px rgba(255,255,255,0.3);
-	font-size: 1.35em;
+	font-weight: 200;
+	color: red;
+	font-size: 1.2em;
+}
+
+.links, .active{
+	padding-left: 20px;
+	padding-top: 0;
+	padding-bottom: 17px; 
+}
+
+.home .active{
+	color: white;
+
+}
+
+
+/*.logo{
+	padding-top: 35px;
+}*/ /*===  Icon of Food Spokes (want to center) Not working:( ====*/
+
+.home {
+	padding-left: 100px;
+	padding-top: 6px;
+
+	
 }
 
 nav a:hover,
@@ -152,6 +177,7 @@ nav a:focus {
 
 /* Effect 4: bottom border enlarge */
 .cl-effect-4 a {
+
 }
 
 .cl-effect-4 a::after {
