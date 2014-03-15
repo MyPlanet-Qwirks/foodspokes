@@ -13,17 +13,12 @@ header{
 	margin:0 auto;
 }
 
-.checkbox+.checkbox{
-	margin-top:15px;
-}
-
-.searchRow{
-    font-family: 'avenir', sans-serif;
-	padding-left:15px;
-	padding-right:15px;
+.checkbox{
+margin-left:20px;
 }
 
 .searchBar{
+<<<<<<< HEAD
 width: 170px;
 height: 30px;	
 margin-top: 12px;
@@ -32,6 +27,13 @@ border-radius: 8px;
 border-style: none;
 
 font-size: 14px;
+=======
+border-radius: 5px;
+border-style: none;
+width: 100%;
+height: 30px;
+color: #000;
+>>>>>>> FETCH_HEAD
 }
 
 .farmerCard{
@@ -40,7 +42,7 @@ font-size: 14px;
     height: 150px;
 	background-color: #fdf9ee;
     width: 100%;
-    font-family: 'avenir', sans-serif;
+    font-family: 'source sans pro', sans-serif;
     color: #666;
     border-radius: 5px;
 }
@@ -132,16 +134,17 @@ list-style: none;
 .filter{
 background-color: #90856c;
 color: #fff;
-padding: 20px 20px 20px 30px;
-font-size: 30px;
-font-weight: 500;
-float: left;
-width: 250px;
+padding: 20px 20px 20px 20px;
 margin-right: 20px;
-margin-left: 60px;
 border-radius: 5px;
+margin-left:50px;
 }
 
+.category{
+font-family: 'source sans pro', sans-serif;
+font-size: 30px;
+font-weight: 500;
+}
 
 h1{
 color: #fff;
@@ -203,6 +206,25 @@ font-size: 40px;
 padding-top: 30px;
 }
 
+/* ABOUT */
+.about{
+}
+
+.aboutprofile{
+margin-top:20px;
+font-size: 24px;
+text-align: center;
+}
+
+.aboutsocialmedia{
+font-size: 40px;
+}   
+
+.aboutinfo{
+padding-top: 30px;
+}
+
+
 /* Modal Styles */
 .modal a{
 	color:#90856c;
@@ -223,7 +245,7 @@ padding-top: 30px;
 }
 
 .modal-header{
-    font-family: 'avenir', sans-serif;
+    font-family: 'source sans pro', sans-serif;
 	background:#90856c;
 	color:white;
 	-webkit-border-top-left-radius: 5px;
@@ -236,7 +258,7 @@ padding-top: 30px;
 }
 
 .modal-body{
-    font-family: 'avenir', sans-serif;
+    font-family: 'source sans pro', sans-serif;
 	background:#fdf9ee;
 }
 
