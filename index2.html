@@ -85,7 +85,8 @@
             <a href data-toggle="modal" data-target="#farm_modal{{$index}}">
                 <div class="farmerCard">
                     <h3>{{farmer.node_title}}</h3>
-                    <div>{{farmer.address.locality}}, {{farmer.address.administrative_area}}</div>
+                    <div class="card_address">{{farmer.address.locality}}, {{farmer.address.administrative_area}}</div>
+                    <div class="card_flavor_text">{{farmer.flavor_text}}</div>
                 </div>
                 
 			<div class="farmericon">
@@ -116,8 +117,11 @@
 						</div>
 						-->
 					</div>
+					<div class="description">
+						{{farmer.description}}
+					</div>
 					<div class="product-info">
-					<br></></><h4>Product Types:</h4>
+						<h4>Product Types:</h4>
 						<ul>
 							<li ng-repeat="category in farmer.category" style="text-transform:capitalize;">{{category}}</li>
 						</ul>
