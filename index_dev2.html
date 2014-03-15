@@ -50,8 +50,9 @@
                                                                                                        
 	</div>
 	<div class="row wrapper searchResultsWrapper" >
-
-      <div class="sidenav searchRow filter col-md-3">
+        <div class="col-sm-3">
+      <div class="">
+          <div class="searchRow filter">
         <input class="searchBar" type="text" ng-model="search.$" placeholder="search"/>
           
 		<form>
@@ -76,12 +77,15 @@
             </div>
         </form>
        </div> 
+        </div>
+            </div>
         
-        <div class="col-md-3"  ng-repeat="farmer in farmers | filter:search ">
+        <div class="col-sm-9">
+        <div class="col-md-4"  ng-repeat="farmer in farmers | filter:search ">
             <a href data-toggle="modal" data-target="#farm_modal{{$index}}">
                 <div class="farmerCard">
                     <h3>{{farmer.node_title}}</h3>
-                    <div>{{farmer.location}}</div>
+                    <div>{{farmer.address.locality}}, {{farmer.address.administrative_area}}</div>
                 </div>
                 
 			<div class="farmericon">
@@ -101,7 +105,8 @@
 						{{farmer.address.thoroughfare}}</br>
 						{{farmer.address.locality}}, {{farmer.address.administrative_area}}</br>
 						{{farmer.address.postal_code}}<br>
-						TEL: (905) 000-0000</br>
+						Tel: {{farmer.phone}}</br>
+						Email: {{farmer.email}}<br/>
 						<a href="{{farmer.website}}">{{farmer.website}}</a>
 						<!--
 						<div class="modal-social">
@@ -116,6 +121,7 @@
 						<ul>
 							<li ng-repeat="category in farmer.category" style="text-transform:capitalize;">{{category}}</li>
 						</ul>
+						<a href="">See all products</a>
 					</div>
 					<br></><div class="availability-info">
 						<h4>Availability:</h4>
@@ -135,6 +141,7 @@
 			  </div> 
 			</div>
         </div>  
+</div>
 
 		<script>
 		var app = angular.module('FarmerApp',[]);
