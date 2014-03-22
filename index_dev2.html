@@ -7,15 +7,17 @@
 	<!--<link rel="stylesheet" href="css/jquery.pageslide.css">-->
 	
 	<!-- Optional theme -->
-	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+	<!--<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
 	
 	
-	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700' rel='stylesheet' type='text/css'>
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">-->
+	
 	<!-- Custom Styles -->
+	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/style2.css">
     <link rel="stylesheet" type="text/css" href="css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="css/component2.css" />
+    <link rel="stylesheet" type="text/css" href="css/animations.css" />
     <script src="js/modernizr.custom.js"></script>
     
 	<!-- Latest compiled and minified JavaScript -->
@@ -45,47 +47,47 @@
             </ul>
             
 		    <!-- Brand and toggle get grouped for better mobile display -->
+
 		</nav>
 	                                                                                                   
                                                                                                        
 	</div>
 	<div class="row wrapper searchResultsWrapper" >
         <div class="col-sm-3">
-      <div class="">
-          <div class="searchRow filter">
-        <input class="searchBar" type="text" ng-model="search2.$" placeholder="search"/>
+          <div class="filter">
+        <input class="searchBar" type="text" ng-model="search.$" placeholder="search"/>
           
-		<form>
             <div class="category">
             <h3>CATEGORY</h3>
 				<div class="checkbox">
-					<label><input name = "categoryCheck" id="fruit_chk"  type="checkbox" ng-model="search.type1" ng-true-value="fruit" ng-false-value="" />
+                    <form>
+					<label><input name = "categoryCheck" id="fruit_chk"  type="checkbox" ng-model="chk.t1" ng-true-value="fruit" ng-false-value="" />
                         <img src="img/fruit_st.png" width="30">&nbsp;fruit</label><br/>
-					<label><input name = "categoryCheck" id="veg_chk" type="checkbox" ng-model="search.type2" ng-true-value="vegetables" ng-false-value="" />
+					<label><input name = "categoryCheck" id="veg_chk" type="checkbox" ng-model="chk.t2" ng-true-value="vegetable" ng-false-value="" />
                         <img src="img/vegetables_st.png" width="30">&nbsp;vegetables</label><br/>
-					<label><input name = "categoryCheck" id="dairy_chk" type="checkbox" ng-model="search.type3" ng-true-value="dairy" ng-false-value="" />
+					<label><input name = "categoryCheck" id="dairy_chk" type="checkbox" ng-model="chk.t3" ng-true-value="dairy" ng-false-value="" />
                         <img src="img/dairy_st.png" width="30">&nbsp;dairy</label><br/>
-					<label><input name = "categoryCheck" id="meat_chk" type="checkbox" ng-model="search.type4" ng-true-value="meat" ng-false-value="" />
+					<label><input name = "categoryCheck" id="meat_chk" type="checkbox" ng-model="chk.t4" ng-true-value="meat" ng-false-value="" />
                         <img src="img/meat_st.png" width="30">&nbsp;meat</label><br/>
-					<label><input name = "categoryCheck" id="grain_chk" type="checkbox" ng-model="search.type5" ng-true-value="grain" ng-false-value="" />
+					<label><input name = "categoryCheck" id="grain_chk" type="checkbox" ng-model="chk.t5" ng-true-value="grain" ng-false-value="" />
                         <img src="img/grain_st.png" width="30">&nbsp;grain</label><br/>
-					<label><input name = "categoryCheck" id="wine_chk" type="checkbox" ng-model="search.type6" ng-true-value="wine" ng-false-value="" />
+					<label><input name = "categoryCheck" id="wine_chk" type="checkbox" ng-model="chk.t6" ng-true-value="wine" ng-false-value="" />
                         <img src="img/wine_st.png" width="30">&nbsp;wine</label><br/>
-                    <label><input name = "categoryCheck" id="spice" type="checkbox" ng-model="search.type7" ng-true-value="spices" ng-false-value="" />
+                    <label><input name = "categoryCheck" id="spice" type="checkbox" ng-model="chk.t7" ng-true-value="spices" ng-false-value="" />
                         <img src="img/spices.png" width="30">&nbsp;spices</label><br/>
                 </div>
             </div>
         </form>
        </div> 
-        </div>
             </div>
         
         <div class="col-sm-9">
-        <div class="col-md-4"  ng-repeat="farmer in farmers |  filter:search.type7 |  filter:search.type6 | filter:search.type5 |  filter:search.type4 | filter:search.type3 | filter:search.type2 | filter:search.type1 | filter:search2 ">
+        <div class="col-md-4" ng-animate="'animate'"  ng-repeat="farmer in farmers | filter:search | filter:chk.t1 | filter:chk.t2 | filter:chk.t3 | filter:chk.t4 | filter:chk.t5 | filter:chk.t6 | filter:chk.t7">
             <a href data-toggle="modal" data-target="#farm_modal{{$index}}">
                 <div class="farmerCard">
                     <h3>{{farmer.node_title}}</h3>
-                    <div>{{farmer.address.locality}}, {{farmer.address.administrative_area}}</div>
+                    <div class="card_address">{{farmer.address.locality}}, {{farmer.address.administrative_area}}</div>
+                    <div class="card_flavor_text">{{farmer.flavor_text}}</div>
                 </div>
                 
 			<div class="farmericon">
@@ -107,7 +109,7 @@
 						{{farmer.address.postal_code}}<br>
 						Tel: {{farmer.phone}}</br>
 						Email: {{farmer.email}}<br/>
-						<a href="{{farmer.website}}">{{farmer.website}}</a>
+						Website: <a href="{{farmer.website}}">{{farmer.website}}</a>
 						<!--
 						<div class="modal-social">
 							<a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
@@ -115,6 +117,9 @@
 							<a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
 						</div>
 						-->
+					</div>
+					<div class="description">
+						{{farmer.description}}
 					</div>
 					<div class="product-info">
 						<h4>Product Types:</h4>
@@ -154,6 +159,7 @@
 </div>
 
 		<script>
+	
 		var app = angular.module('FarmerApp',[]);
 		
 		app.controller('FarmerCtrl', function($scope, $http){
@@ -162,10 +168,6 @@
 			
 			});
 		});
-			
-
-		
-		
 	
 	
 		</script>		
