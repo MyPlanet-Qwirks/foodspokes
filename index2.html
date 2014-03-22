@@ -37,17 +37,15 @@
 		    <!-- Collect the nav links, forms, and other content for toggling -->
             <ul class="nav navbar-nav color-4">
                 <nav class="cl-effect-4">
-                <a href="#" class="home"><img src="img/logo.png" width="33" class="logo">&nbsp;Foodspokes</a>
-                <a class="links" href="#">Home</span></a>
-                <a class="links" href="#">About</span></a>
-                <a class="links" href="#">Contact</span></a>
+                <a href="#" class="home"><img src="img/logo.png" width="33">&nbsp;Foodspokes</a>
+                <a href="#">Home</span></a>
+                <a href="#">About</span></a>
+                <a href="#">Contact</span></a>
                 <a href="#" class="active">Discover</span></a>
                 </nav>
             </ul>
             
 		    <!-- Brand and toggle get grouped for better mobile display -->
-
-		    
 
 		</nav>
 	                                                                                                   
@@ -56,25 +54,25 @@
 	<div class="row wrapper searchResultsWrapper" >
         <div class="col-sm-3">
           <div class="filter">
-        <input class="searchBar" type="text" ng-model="search.$" placeholder="&nbsp;Search"/>
+        <input class="searchBar" type="text" ng-model="search.$" placeholder="search"/>
           
             <div class="category">
             <h3>CATEGORY</h3>
 				<div class="checkbox">
                     <form>
-					<label><input name = "categoryCheck" id="fruit_chk"  type="checkbox" ng-model="search.$" ng-true-value="fruit" ng-false-value="" />
+					<label><input name = "categoryCheck" id="fruit_chk"  type="checkbox" ng-model="chk.t1" ng-true-value="fruit" ng-false-value="" />
                         <img src="img/fruit_st.png" width="30">&nbsp;fruit</label><br/>
-					<label><input name = "categoryCheck" id="veg_chk" type="checkbox" ng-model="search.$" ng-true-value="vegetable" ng-false-value="" />
-                        <img src="img/vegetables.png" width="30">&nbsp;vegetables</label><br/>
-					<label><input name = "categoryCheck" id="dairy_chk" type="checkbox" ng-model="search.$" ng-true-value="dairy" ng-false-value="" />
+					<label><input name = "categoryCheck" id="veg_chk" type="checkbox" ng-model="chk.t2" ng-true-value="vegetable" ng-false-value="" />
+                        <img src="img/vegetables_st.png" width="30">&nbsp;vegetables</label><br/>
+					<label><input name = "categoryCheck" id="dairy_chk" type="checkbox" ng-model="chk.t3" ng-true-value="dairy" ng-false-value="" />
                         <img src="img/dairy_st.png" width="30">&nbsp;dairy</label><br/>
-					<label><input name = "categoryCheck" id="meat_chk" type="checkbox" ng-model="search.$" ng-true-value="meat" ng-false-value="" />
+					<label><input name = "categoryCheck" id="meat_chk" type="checkbox" ng-model="chk.t4" ng-true-value="meat" ng-false-value="" />
                         <img src="img/meat_st.png" width="30">&nbsp;meat</label><br/>
-					<label><input name = "categoryCheck" id="grain_chk" type="checkbox" ng-model="search.$" ng-true-value="grain" ng-false-value="" />
+					<label><input name = "categoryCheck" id="grain_chk" type="checkbox" ng-model="chk.t5" ng-true-value="grain" ng-false-value="" />
                         <img src="img/grain_st.png" width="30">&nbsp;grain</label><br/>
-					<label><input name = "categoryCheck" id="wine_chk" type="checkbox" ng-model="search.$" ng-true-value="wine" ng-false-value="" />
+					<label><input name = "categoryCheck" id="wine_chk" type="checkbox" ng-model="chk.t6" ng-true-value="wine" ng-false-value="" />
                         <img src="img/wine_st.png" width="30">&nbsp;wine</label><br/>
-                    <label><input name = "categoryCheck" id="spice" type="checkbox" ng-model="search.$" ng-true-value="wine" ng-false-value="" />
+                    <label><input name = "categoryCheck" id="spice" type="checkbox" ng-model="chk.t7" ng-true-value="spices" ng-false-value="" />
                         <img src="img/spices.png" width="30">&nbsp;spices</label><br/>
                 </div>
             </div>
@@ -83,11 +81,12 @@
             </div>
         
         <div class="col-sm-9">
-        <div class="col-md-4"  ng-repeat="farmer in farmers | filter:search ">
+        <div class="col-md-4"  ng-repeat="farmer in farmers | filter:search | filter:chk.t1 | filter:chk.t2 | filter:chk.t3 | filter:chk.t4 | filter:chk.t5 | filter:chk.t6 | filter:chk.t7">
             <a href data-toggle="modal" data-target="#farm_modal{{$index}}">
                 <div class="farmerCard">
                     <h3>{{farmer.node_title}}</h3>
-                    <div>{{farmer.location}}</div>
+                    <div class="card_address">{{farmer.address.locality}}, {{farmer.address.administrative_area}}</div>
+                    <div class="card_flavor_text">{{farmer.flavor_text}}</div>
                 </div>
                 
 			<div class="farmericon">
@@ -104,34 +103,41 @@
 				  </div>
 				  <div class="modal-body">
 					<div class="general-info">
-						100 Address Road</br>
-						Toronto, ON M56 3A9</br>
-						TEL: (905) 000-0000</br>
-						<a href>{{farmer.website}}</a>
+						{{farmer.address.thoroughfare}}</br>
+						{{farmer.address.locality}}, {{farmer.address.administrative_area}}</br>
+						{{farmer.address.postal_code}}<br>
+						Tel: {{farmer.phone}}</br>
+						Email: {{farmer.email}}<br/>
+						Website: <a href="{{farmer.website}}">{{farmer.website}}</a>
+						<!--
 						<div class="modal-social">
 							<a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
 							<a href="#"><i class="fa fa-twitter-square fa-2x"></i></a>
 							<a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
 						</div>
+						-->
+					</div>
+					<div class="description">
+						{{farmer.description}}
 					</div>
 					<div class="product-info">
-					<br></></><h4>Product Types:</h4>
+						<h4>Product Types:</h4>
 						<ul>
 							<li ng-repeat="category in farmer.category" style="text-transform:capitalize;">{{category}}</li>
 						</ul>
+						<h4>Products:</h4>
+						<ul class="products-list">
+							<li ng-repeat="product in farmer.product_list_2">
+								{{product}}
+							</li>
+						</ul>
 					</div>
-					<br></><div class="availability-info">
+					<br></>
+					<div class="availability-info">
 						<h4>Availability:</h4>
 						<ul>
-							<li>Mondays
-							<ul>
-								<li>Toronto: 11am - 5pm</li>
-							</ul>
-							</li>
-							<li>Tuesdays
-							<ul>
-								<li>Waterloo: 10am - 4pm</li>
-							</ul>
+							<li ng-repeat="schedule_item in farmer.delivery_schedule_2">
+								{{schedule_item}}
 							</li>
 						</ul>
 					</div>
@@ -141,7 +147,7 @@
 							<li ng-repeat="invoice in farmer.invoice_style">{{invoice}}</li>
 						</ul>
 					</div>
-				  </div>
+				  </div> <!-- modal-body end -->
 				  <div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				  </div>
