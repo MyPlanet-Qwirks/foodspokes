@@ -1,0 +1,247 @@
+header{
+
+}
+
+.row{
+	width:1280px;
+	max-width:100%;
+	margin:0;
+	padding-left:15px;
+	padding-right:15px;
+}
+.wrapper{
+	width:1280px;
+	max-width:100%;
+	margin:0 auto;
+}
+
+.checkbox+.checkbox{
+	margin-top:15px;
+}
+
+.searchRow{
+    font-family: 'avenir', sans-serif;
+	padding-left:15px;
+	padding-right:15px;
+}
+
+.searchRow div{
+}
+
+.searchBar{
+margin-top: 12px;
+
+}
+
+.farmerCard{
+    padding-top: 5px;
+    text-align: center;
+    height: 150px;
+	background-color: #fff;
+    opacity: 0.7;
+    margin: 20px 10px 0px 0px;
+    width: 100%;
+    font-family: 'avenir', sans-serif;
+}
+
+.farmericon{
+	width: 100%;
+	height: 50px;
+	background-color: #59642b;
+	padding:5px;
+	text-align:center;
+}
+
+.searchResultsWrapper{
+	max-width: 100%;
+    padding: 30px 40px 50px 40px;
+	background-color:#999933;
+}
+
+.checkbox{
+font-size: 18px;
+font-family: avenir;
+font-weight: 300;
+padding: 10px;
+}
+
+/*See jquery.pageslide.css for styles*/
+#pageslide{
+	/*width:660px;*/
+	
+}
+
+
+/* navigation */
+.navbar{
+    background-color: #333333;
+    text-transform: uppercase;
+    padding-left: 10px;
+    border-radius: 0px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.navbar{
+width: 100%;
+}
+
+.nav{
+font-family: 'avenir', sans-serif;
+color: #fff;
+background-color: #333333;
+}
+
+.home{
+color: #fff;
+font-weight: 600;
+font-size: 30px;
+}
+
+.nav a{
+color: #fff;
+}
+
+.nav a:hover{
+text-decoration: none;
+}
+
+.navbar-nav{
+font-size: 15px;
+}
+
+.navbar-right{
+padding-top:10px;
+padding-right: 20px;
+}
+
+.active{
+font-weight: 600;
+color: #cc6633;
+}
+
+.navbar ul{
+margin: 0 auto;
+text-align: center;
+list-style: none;
+}
+
+.filter{
+background-color: #cc6633;
+color: #fff;
+padding: 15px;
+font-size: 60px;
+font-weight: 300;
+text-transform: uppercase;
+}
+
+
+h1{
+color: #fff;
+font-size: 26px;
+}
+
+h2{
+font-size: 24px;
+font-weight: 600;
+text-transform: uppercase;
+}
+
+h3{
+}    
+
+h4{
+font-size:20px;
+}
+
+body{
+color: #333333;
+font-family: 'avenir', sans-serif;
+font-size: 18px;
+background-image: url('sprinkles.png');
+background-repeat: repeat;
+font-weight: 300;
+}
+
+body a{
+color: #cc6633;
+}
+
+body a:hover{
+color: #fff;
+text-decoration: none;
+}
+
+footer{
+background-color: #333333;
+width: 100%;
+color: #fff;
+height: 300px;
+padding: 25px;
+max-height: 100%;
+font-size: 16px;
+line-height: 21px;
+}
+
+.profile{
+font-size: 24px;
+text-align: center;
+}
+
+.socialmedia{
+font-size: 40px;
+}   
+
+.footerinfo{
+padding-top: 30px;
+}
+
+/* Modal Styles */
+.modal a{
+	color:#cc6633;
+
+}
+
+.modal a:hover{
+	color:#AD5122;
+}
+
+.modal h4{
+	margin-top:0;
+	font-weight:200;
+}
+
+.modal-social{
+	font-size:10pt;
+}
+
+.modal-header{
+    font-family: 'avenir', sans-serif;
+	background:#59642b;
+	color:white;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom:1px solid white;
+}
+
+.modal-body{
+    font-family: 'avenir', sans-serif;
+	background:#e0e0c1;
+}
+
+.modal-footer{
+	background:#e0e0c1;
+	padding:0 20px 20px 0;
+	border:none;
+	-webkit-border-bottom-right-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	margin:0;
+}
