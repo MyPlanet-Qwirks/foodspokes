@@ -54,7 +54,7 @@
 	<div class="row wrapper searchResultsWrapper" >
         <div class="col-sm-3">
           <div class="filter">
-        <input class="searchBar" type="text" ng-model="search.$" placeholder="search"/>
+        <input class="searchBar" type="text" ng-model="search" placeholder="search"/>
           
             <div class="category">
             <h3>CATEGORY</h3>
@@ -81,7 +81,7 @@
             </div>
         
         <div class="col-sm-9">
-        <div class="col-md-4"  ng-repeat="farmer in farmers | filter:search | filter:chk.t1 | filter:chk.t2 | filter:chk.t3 | filter:chk.t4 | filter:chk.t5 | filter:chk.t6 | filter:chk.t7">
+        <div class="col-md-4"  ng-repeat="farmer in farmers | searchFilter: search | filter:chk.t1 | filter:chk.t2 | filter:chk.t3 | filter:chk.t4 | filter:chk.t5 | filter:chk.t6 | filter:chk.t7">
             <a href data-toggle="modal" data-target="#farm_modal{{$index}}">
                 <div class="farmerCard">
                     <h3>{{farmer.node_title}}</h3>
@@ -163,8 +163,47 @@
 		app.controller('FarmerCtrl', function($scope, $http){
 			$http({method: 'GET', url: 'http://dev-foodspokes.gotpantheon.com/api/farmers.json'}).success(function(data){
 				$scope.farmers = data; // response data 
+				
+		
 			
 			});
+		});
+		
+	/*	app.filter('filterFunction', function() {
+
+ 			 return function (objects, query) {
+
+   				 // objects is the array being filtered
+  				  // query is the value you passed in
+
+  				  array = query.split(' ');
+
+ 				   for (var i = 0, len = objects.length; i < len; i++) {
+  		   			 // filter the crap out of these objects
+		   			 }
+
+ 		 	}
+		}); */
+		
+		
+		app.filter('searchFilter', function($filter){
+   			return function(items, text){
+      		if (!text || text.length === 0)
+        	return items;
+
+      		// split search text on space
+      		var searchTerms = text.split(' ');
+
+      		// search for single terms.
+      		// this reduces the item list step by step
+      		searchTerms.forEach(function(term) {
+        	if (term && term.length)
+          		items = $filter('filter')(items, term);
+      		});
+
+      		return items
+   			
+   			};
 		});
 	
 	
