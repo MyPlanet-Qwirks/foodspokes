@@ -90,9 +90,9 @@
                     <!-- <div class="card_flavor_text">{{farmer.flavor_text}}</div> -->
                 </div>
                 
-			<!-- <div class="farmericon">
-				<img ng-repeat="category in farmer.category" src="img/{{category}}_st.png" width="40">
-			</div> -->
+			<div class="farmericon">
+				{{farmer.cuisine}}
+			</div> 
             </a>
 			
 			<div class="modal fade" id="farm_modal{{$index}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -104,7 +104,7 @@
 				  </div>
 				  <div class="modal-body">
 					<div class="general-info">
-						{{farmer.field_data_field_address_field_address_thoroughfare}}</br>
+						{{farmer.address.thoroughfare}}</br>
 						{{farmer.field_data_field_address_field_address_locality}},
 						{{farmer.field_data_field_address_field_address_administrative_area}}</br>
 						{{farmer.field_data_field_address_field_address_postal_code}}<br>
