@@ -14,7 +14,8 @@
 	
 	<!-- Custom Styles -->
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="css/style2.css">
+	<link href='http://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/style3.css">
     <link rel="stylesheet" type="text/css" href="css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="css/component2.css" />
     <script src="js/modernizr.custom.js"></script>
@@ -24,6 +25,7 @@
     <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-animate.min.js"></script>
 	
 	
 </head>
@@ -37,11 +39,10 @@
 		    <!-- Collect the nav links, forms, and other content for toggling -->
             <ul class="nav navbar-nav color-4">
                 <nav class="cl-effect-4">
-                <a href="#" class="home"><img src="img/logo.png" width="33">&nbsp;Foodspokes</a>
-                <a href="#">Home</span></a>
-                <a href="#">About</span></a>
-                <a href="#">Contact</span></a>
-                <a href="#" class="active">Discover</span></a>
+                <a href="splash.html" class="home"><img src="img/logo.png" width="33">&nbsp;Foodspokes</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="find.html" class="active">Discover</a>
                 </nav>
             </ul>
             
@@ -51,13 +52,26 @@
 	                                                                                                   
                                                                                                        
 	</div>
+
+	<style>
+		.farmericon{
+			color: #004623;
+		}
+	</style>
+	<div class="bg2">
 	<div class="row wrapper searchResultsWrapper" >
         <div class="col-sm-3">
+        	 <div class="filter2">
+		        <a style="border-right:1px solid #ffcc66;border-top-left-radius:5px;" href="index2_restaurant.html" class="searchToggle active">Restaurants</a>
+		         <a style="border-top-right-radius:5px;"href="find.html" class="searchToggle">Suppliers</a>
+            </div>
+            <div class="searchthing">
+        		<input class="searchBar" style="border:1px solid #006633;" type="text" ng-model="search" placeholder="  Search"/>
+          	</div>
           <div class="filter">
-        <input class="searchBar" type="text" ng-model="search" placeholder="&nbsp;search"/>
           
-            <div class="category">
-            <h3>CUISINE</h3>
+            <div class="category" >
+            <h3 style="margin-top:0;">Cuisine</h3>
 				<div class="checkbox">
                     <form>
 					<label><input name = "categoryCheck" id="fruit_chk"  type="checkbox" ng-model="chk.t1" ng-true-value="organic" ng-false-value="" />
@@ -81,7 +95,7 @@
             </div>
         
         <div class="col-sm-9">
-        <div class="col-md-4"  ng-repeat="farmer in farmers | searchFilter: search | filter:chk.t1 | filter:chk.t2 | filter:chk.t3 | filter:chk.t4 | filter:chk.t5 | filter:chk.t6 | filter:chk.t7">
+        <div class="col-md-4 animate-repeat"  ng-repeat="farmer in farmers | searchFilter: search | filter:chk.t1 | filter:chk.t2 | filter:chk.t3 | filter:chk.t4 | filter:chk.t5 | filter:chk.t6 | filter:chk.t7">
             <a href data-toggle="modal" data-target="#farm_modal{{$index}}">
                 <div class="farmerCard">
                     <h3>{{farmer.node_title}}</h3>
@@ -90,7 +104,7 @@
                     <!-- <div class="card_flavor_text">{{farmer.flavor_text}}</div> -->
                 </div>
                 
-			<div class="farmericon" style="color:white;">
+			<div class="farmericon">
 				{{farmer.cuisine}}
 			</div> 
             </a>
@@ -158,8 +172,10 @@
 			</div>
         </div>  
 </div>
+
+</div>
 		<script>
-		var app = angular.module('FarmerApp',[]);
+		var app = angular.module('FarmerApp',['ngAnimate']);
 		
 		app.controller('FarmerCtrl', function($scope, $http){
 			$http({method: 'GET', url: 'http://dev-foodspokes.gotpantheon.com/api/restaurants.json'}).success(function(data){
@@ -195,7 +211,7 @@
 
         
 	</div>
-        
+   <!--     
 <footer class="wrapper">
 	<div class="col-md-3 profile">
 		<img src="img/vanessa.png">
@@ -221,6 +237,7 @@
 		</div>
     </div>
 </footer>
+-->
 </div>
 </body>
 </html>

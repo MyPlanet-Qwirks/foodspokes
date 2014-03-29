@@ -25,6 +25,7 @@
     <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-animate.min.js"></script>
 	
 	
 </head>
@@ -38,8 +39,7 @@
 		    <!-- Collect the nav links, forms, and other content for toggling -->
             <ul class="nav navbar-nav color-4">
                 <nav class="cl-effect-4">
-                <a href="#" class="home"><img src="img/logo.png" width="33">&nbsp;Foodspokes</a>
-                <a href="index.html">Home</a>
+                <a href="splash.html" class="home"><img src="img/logo.png" width="33">&nbsp;Foodspokes</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
                 <a href="find.html" class="active">Discover</a>
@@ -55,32 +55,31 @@
 	<div class="row wrapper searchResultsWrapper" >
         <div class="col-sm-3">
            <div class="filter2">
-                <div class="btn-group">
-			        <button type="button" class="btn btn-default btn-sm">Restaurants</button>
-			         <button type="button" class="btn btn-default btn-sm">Suppliers</button>
-				</div>
+		        <a style="border-right:1px solid #ffcc66;border-top-left-radius:5px;" href="index2_restaurant.html" class="searchToggle">Restaurants</a>
+		         <a style="border-top-right-radius:5px;"href class="searchToggle active">Suppliers</a>
             </div>
-            
-        <div class="filter"> 
-        <input class="searchBar" type="text" ng-model="search.$" placeholder="  search"/>
-          
+            <div class="searchthing">
+        		<input class="searchBar" style="border:1px solid #006633;" type="text" ng-model="search" placeholder="  Search"/>
+          	</div>
+        	<div class="filter"> 
+        	
             <div class="category">
-            <h3>CATEGORY</h3>
+            	<h3 style="margin-top:0;">Types</h3>
 				<div class="checkbox">
                     <form>
-					<label><input name = "categoryCheck" id="fruit_chk"  type="checkbox" ng-model="search.$" ng-true-value="fruit" ng-false-value="" />
+					<label><input name = "categoryCheck" id="fruit_chk"  type="checkbox" ng-model="chk.t1" ng-true-value="fruit" ng-false-value="" />
                         <img src="img/fruit3.png" width="30">&nbsp;fruit</label><br/>
-					<label><input name = "categoryCheck" id="veg_chk" type="checkbox" ng-model="search.$" ng-true-value="vegetable" ng-false-value="" />
+					<label><input name = "categoryCheck" id="veg_chk" type="checkbox" ng-model="chk.t2" ng-true-value="vegetable" ng-false-value="" />
                         <img src="img/vegetables3.png" width="30">&nbsp;vegetables</label><br/>
-					<label><input name = "categoryCheck" id="dairy_chk" type="checkbox" ng-model="search.$" ng-true-value="dairy" ng-false-value="" />
+					<label><input name = "categoryCheck" id="dairy_chk" type="checkbox" ng-model="chk.t3" ng-true-value="dairy" ng-false-value="" />
                         <img src="img/dairy3.png" width="30">&nbsp;dairy</label><br/>
-					<label><input name = "categoryCheck" id="meat_chk" type="checkbox" ng-model="search.$" ng-true-value="meat" ng-false-value="" />
+					<label><input name = "categoryCheck" id="meat_chk" type="checkbox" ng-model="chk.t4"  ng-true-value="meat" ng-false-value="" />
                         <img src="img/meat3.png" width="30">&nbsp;meat</label><br/>
-					<label><input name = "categoryCheck" id="grain_chk" type="checkbox" ng-model="search.$" ng-true-value="grain" ng-false-value="" />
+					<label><input name = "categoryCheck" id="grain_chk" type="checkbox" ng-model="chk.t5"  ng-true-value="grain" ng-false-value="" />
                         <img src="img/grain3.png" width="30">&nbsp;grain</label><br/>
-					<label><input name = "categoryCheck" id="wine_chk" type="checkbox" ng-model="search.$" ng-true-value="wine" ng-false-value="" />
+					<label><input name = "categoryCheck" id="wine_chk" type="checkbox" ng-model="chk.t6"  ng-true-value="wine" ng-false-value="" />
                         <img src="img/wine3.png" width="30">&nbsp;wine</label><br/>
-                    <label><input name = "categoryCheck" id="spice" type="checkbox" ng-model="search.$" ng-true-value="wine" ng-false-value="" />
+                    <label><input name = "categoryCheck" id="spice" type="checkbox" ng-model="chk.t7"  ng-true-value="wine" ng-false-value="" />
                         <img src="img/spices3.png" width="30">&nbsp;spices</label><br/>
                 </div>
                     
@@ -90,8 +89,8 @@
             </div>
         
         <div class="col-sm-9">
-        <div class="col-md-4"  ng-repeat="farmer in farmers | filter:search ">
-            <a href data-toggle="modal" data-target="#farm_modal{{$index}}">
+        <div class="col-md-4 animate-repeat"  ng-repeat="farmer in farmers | searchFilter: search | filter:chk.t1 | filter:chk.t2 | filter:chk.t3 | filter:chk.t4 | filter:chk.t5 | filter:chk.t6 | filter:chk.t7">
+            <a class="farmerContainer" href data-toggle="modal" data-target="#farm_modal{{$index}}">
                 <div class="farmerCard">
                     <h3>{{farmer.node_title}}</h3>
                     <div>{{farmer.address.locality}}, {{farmer.address.administrative_area}}</div>
@@ -103,84 +102,6 @@
 			</div>
             </a>
 			
-            <style type="text/css">
-            	.farmerCard{
-
-            		opacity:1;
-            		background-color:rgba(253, 249, 238, 0.6);
-            		border-bottom-right-radius: 0;
-            		border-bottom-left-radius:0;
-            	}
-
-            
-
-            	.farmerCard h3, .modal h3{
-            		font-family: 'Oswald', sans-serif;
-            		font-size:24px;
-            		font-weight:700;
-            	}
-            	.modal{
-            		color: #004623;
-            	}
-
-            	.modal-content{
-            		display:block;
-            		background-color:#ccc;
-            	}
-
-            	.modal h4{
-					font-size:18px;
-					margin:0;
-					margin-top:15px;
-					margin-bottom:5px;
-
-            	}
-            	.modal section{
-            		padding-bottom:15px;
-            		border-bottom:1px solid #004623;
-            		margin-right:10px;
-            		margin-left:10px;
-        		}
-
-            	.modal ul,.modal p{
-            		margin:0;
-            	}
-
-            	.modal p{
-            		padding:0;
-            	}
-
-            	.modal section p{
-            		padding-left:20px;
-            	}
-
-
-            	.modal-header{
-            		border-bottom:1px solid #004623;
-            		color: #004623 !important;
-            	}
-
-            	.farmericon{
-            		border-top:1px solid #004623;
-            		-webkit-border-radius-top: 0px !important;
-					-moz-border-radius-top: 0px !important;
-					border-radius-top: 0px !important;
-						border-top-right-radius:0 !important;
-            		border-top-left-radius:0 !important;
-            	}
-
-            	.modal glyphicon{
-            		position:relative;
-            		top:4px;
-            		right:5px;
-            	}
-
-            	.modal-body, .modal-footer, .modal-header{
-
-            		background-color:#e0e0d9;
-            	}
-
-            </style>
 
 			<div class="modal fade" id="farm_modal{{$index}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			  <div class="modal-dialog">
@@ -258,7 +179,7 @@
 </div>
 
 		<script>
-		var app = angular.module('FarmerApp',[]);
+		var app = angular.module('FarmerApp',['ngAnimate']);
 		
 		app.controller('FarmerCtrl', function($scope, $http){
 			$http({method: 'GET', url: 'http://dev-foodspokes.gotpantheon.com/api/farmers.json'}).success(function(data){
@@ -267,6 +188,26 @@
 			});
 		});
 	
+		app.filter('searchFilter', function($filter){
+   			return function(items, text){
+      		if (!text || text.length === 0)
+        	return items;
+
+      		// split search text on space
+			text = text.replace(/,/g , " ");
+      		var searchTerms = text.split(' ');
+
+      		// search for single terms.
+      		// this reduces the item list step by step
+      		searchTerms.forEach(function(term) {
+        	if (term && term.length)
+          		items = $filter('filter')(items, term);
+      		});
+
+      		return items
+   			
+   			};
+		});
 	
 		</script>		
 
