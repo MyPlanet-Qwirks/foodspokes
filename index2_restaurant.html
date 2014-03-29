@@ -85,13 +85,14 @@
             <a href data-toggle="modal" data-target="#farm_modal{{$index}}">
                 <div class="farmerCard">
                     <h3>{{farmer.node_title}}</h3>
-                    <div class="card_address">{{farmer.address.locality}}, {{farmer.address.administrative_area}}</div>
-                    <div class="card_flavor_text">{{farmer.flavor_text}}</div>
+                    <div class="card_address">{{farmer.field_data_field_address_field_address_locality}}, 
+					{{farmer.field_data_field_address_field_address_administrative_area}}</div>
+                    <!-- <div class="card_flavor_text">{{farmer.flavor_text}}</div> -->
                 </div>
                 
 			<div class="farmericon">
-				<img ng-repeat="category in farmer.category" src="img/{{category}}_st.png" width="40">
-			</div>
+				{{farmer.cuisine}}
+			</div> 
             </a>
 			
 			<div class="modal fade" id="farm_modal{{$index}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -104,8 +105,9 @@
 				  <div class="modal-body">
 					<div class="general-info">
 						{{farmer.address.thoroughfare}}</br>
-						{{farmer.address.locality}}, {{farmer.address.administrative_area}}</br>
-						{{farmer.address.postal_code}}<br>
+						{{farmer.field_data_field_address_field_address_locality}},
+						{{farmer.field_data_field_address_field_address_administrative_area}}</br>
+						{{farmer.field_data_field_address_field_address_postal_code}}<br>
 						Tel: {{farmer.phone}}</br>
 						Email: {{farmer.email}}<br/>
 						Website: <a href="{{farmer.website}}">{{farmer.website}}</a>
@@ -120,7 +122,7 @@
 					<div class="description">
 						{{farmer.description}}
 					</div>
-					<div class="product-info">
+					<!-- <div class="product-info">
 						<h4>Product Types:</h4>
 						<ul>
 							<li ng-repeat="category in farmer.category" style="text-transform:capitalize;">{{category}}</li>
@@ -146,7 +148,7 @@
 						<ul>
 							<li ng-repeat="invoice in farmer.invoice_style">{{invoice}}</li>
 						</ul>
-					</div>
+					</div> -->
 				  </div> <!-- modal-body end -->
 				  <div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -156,12 +158,11 @@
 			</div>
         </div>  
 </div>
-
 		<script>
 		var app = angular.module('FarmerApp',[]);
 		
 		app.controller('FarmerCtrl', function($scope, $http){
-			$http({method: 'GET', url: 'http://dev-foodspokes.gotpantheon.com/api/farmers.json'}).success(function(data){
+			$http({method: 'GET', url: 'http://dev-foodspokes.gotpantheon.com/api/restaurants.json'}).success(function(data){
 				$scope.farmers = data; // response data 
 			
 			});
@@ -173,6 +174,7 @@
         	return items;
 
       		// split search text on space
+			text = text.replace(/,/g , " ");
       		var searchTerms = text.split(' ');
 
       		// search for single terms.

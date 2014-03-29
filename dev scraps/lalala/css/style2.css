@@ -86,14 +86,6 @@ padding: 10px;
     margin: 0 auto;
 }
 
-.homep{
-text-align: center;
-background-color: ;
-height: 100%;
-color: #333333;
-font-size: 65px;
-}
-
 .navbar{
 width: 100%;
 }
@@ -171,20 +163,6 @@ h4{
 font-size:20px;
 }
 
-.abouth{
-font-size: 28px;
-font-weight: 400;
-padding-bottom: 10px;
-}
-
-.aboutm{
-padding-top:240px;
-}
-
-hr{
-width: 2px;
-}
-
 body{
 color: #333333;
 font-family: 'avenir', sans-serif;
@@ -229,52 +207,23 @@ padding-top: 30px;
 }
 
 /* ABOUT */
-
-.aboutback{
-	background-color: #fdf9ee;
-    font-family: 'source sans pro', sans-serif;
-    color: #666;
-    font-size: 18px;
-    margin-bottom: 0px;
-    padding-top: 15px;
-    padding-left: 10px;
-    padding-bottom:10px;
+.about{
 }
 
-.aboutback2{
-padding-left: 20px;
-padding-top:20px;
-width:250px;
-background-color:#e2dccf;
+.aboutprofile{
+margin-top:20px;
+font-size: 24px;
+text-align: center;
 }
 
-.contactback{
-padding-top:20px;
-background-color:#e2dccf;    
-}
-
-.aboutpics{
-text-align:center;
-}
-
-.margin{
-    margin-top:10px;
-    margin-right: 20px;
-}
+.aboutsocialmedia{
+font-size: 40px;
+}   
 
 .aboutinfo{
-margin-top:25px;
+padding-top: 30px;
 }
 
-.contact{
-margin-top:25px;
-margin-left: 20px;
-padding-bottom: 25px;
-}
-
-p{
-padding-bottom: 20px;
-}
 
 /* Modal Styles */
 .modal a{
@@ -326,48 +275,8 @@ padding-bottom: 20px;
 	margin:0;
 }
 
-<<<<<<< HEAD
-
-/* ribbon*/
-
-		.wraparound {
-			position:relative;
-			
-			padding:10px 10px 10px 25px;
-			margin:20px 0px 20px -26px;	/* 30 = 20 padding + 10 neg margin */
-			
-			border:1px solid #333;
-			background:#333;
-			color:#fdf9ee;
-			box-shadow:0 4px 4px rgba(0,0,0,0.3);
-			}
-			.wraparound:before,
-			.wraparound:after {
-				content:" ";
-				border-top:10px solid #333;	/* Colour of the triangle. To flip the effect, use border-bottom. */
-				position:absolute;
-				bottom:-11px; /* +1 to compensate for the border */
-				} 
-				.wraparound:before {
-					border-left:10px solid transparent;
-					left:-1px;	/* Only required if the element has a border */
-					}
-.right{
-float:right;
-}
-
-.splash{
-text-align:center;
-padding-left:150px;
-}
-
-.welcome{
-padding-top: 40vh;
-padding-right:50px;
-=======
 .products-list {
   columns: 3;
   -webkit-columns: 3;
   -moz-columns: 3;
->>>>>>> FETCH_HEAD
 }

@@ -163,9 +163,28 @@
 		app.controller('FarmerCtrl', function($scope, $http){
 			$http({method: 'GET', url: 'http://dev-foodspokes.gotpantheon.com/api/farmers.json'}).success(function(data){
 				$scope.farmers = data; // response data 
+				
+		
 			
 			});
 		});
+		
+	/*	app.filter('filterFunction', function() {
+
+ 			 return function (objects, query) {
+
+   				 // objects is the array being filtered
+  				  // query is the value you passed in
+
+  				  array = query.split(' ');
+
+ 				   for (var i = 0, len = objects.length; i < len; i++) {
+  		   			 // filter the crap out of these objects
+		   			 }
+
+ 		 	}
+		}); */
+		
 		
 		app.filter('searchFilter', function($filter){
    			return function(items, text){
@@ -186,7 +205,6 @@
    			
    			};
 		});
-	
 	
 	
 		</script>		

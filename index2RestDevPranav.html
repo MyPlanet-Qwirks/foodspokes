@@ -81,12 +81,12 @@
             </div>
         
         <div class="col-sm-9">
-        <div class="col-md-4"  ng-repeat="farmer in farmers | searchFilter: search | filter:chk.t1 | filter:chk.t2 | filter:chk.t3 | filter:chk.t4 | filter:chk.t5 | filter:chk.t6 | filter:chk.t7">
+        <div class="col-md-4"  ng-repeat="restarant in restaurants| searchFilter: search | filter:chk.t1 | filter:chk.t2 | filter:chk.t3 | filter:chk.t4 | filter:chk.t5 | filter:chk.t6 | filter:chk.t7">
             <a href data-toggle="modal" data-target="#farm_modal{{$index}}">
                 <div class="farmerCard">
-                    <h3>{{farmer.node_title}}</h3>
-                    <div class="card_address">{{farmer.address.locality}}, {{farmer.address.administrative_area}}</div>
-                    <div class="card_flavor_text">{{farmer.flavor_text}}</div>
+                    <h3>{{restaurant.node_title}}</h3>
+                    <div class="card_address">{{restaurant.address.locality}}, {{restaurant.address.administrative_area}}</div>
+                    <div class="card_flavor_text">{{restaurant.flavor_text}}</div>
                 </div>
                 
 			<div class="farmericon">
@@ -103,12 +103,12 @@
 				  </div>
 				  <div class="modal-body">
 					<div class="general-info">
-						{{farmer.address.thoroughfare}}</br>
-						{{farmer.address.locality}}, {{farmer.address.administrative_area}}</br>
-						{{farmer.address.postal_code}}<br>
-						Tel: {{farmer.phone}}</br>
-						Email: {{farmer.email}}<br/>
-						Website: <a href="{{farmer.website}}">{{farmer.website}}</a>
+						{{restaurant.address.thoroughfare}}</br>
+						{{restaurant.address.locality}}, {{restaurant.address.administrative_area}}</br>
+						{{restaurant.address.postal_code}}<br>
+						Tel: {{restaurant.phone}}</br>
+						Email: {{restaurant.email}}<br/>
+						Website: <a href="{{restaurant.website}}">{{restaurant.website}}</a>
 						<!--
 						<div class="modal-social">
 							<a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
@@ -118,16 +118,16 @@
 						-->
 					</div>
 					<div class="description">
-						{{farmer.description}}
+						{{restaurant.description}}
 					</div>
 					<div class="product-info">
 						<h4>Product Types:</h4>
 						<ul>
-							<li ng-repeat="category in farmer.category" style="text-transform:capitalize;">{{category}}</li>
+							<li ng-repeat="category in restaurant.category" style="text-transform:capitalize;">{{category}}</li>
 						</ul>
 						<h4>Products:</h4>
 						<ul class="products-list">
-							<li ng-repeat="product in farmer.product_list_2">
+							<li ng-repeat="product in restaurant.product_list_2">
 								{{product}}
 							</li>
 						</ul>
@@ -144,7 +144,7 @@
 					<br></><div class="invoice-info">
 						<h4>Invoice Style:</h4>
 						<ul>
-							<li ng-repeat="invoice in farmer.invoice_style">{{invoice}}</li>
+							<li ng-repeat="invoice in restaurant.invoice_style">{{invoice}}</li>
 						</ul>
 					</div>
 				  </div> <!-- modal-body end -->
@@ -161,7 +161,7 @@
 		var app = angular.module('FarmerApp',[]);
 		
 		app.controller('FarmerCtrl', function($scope, $http){
-			$http({method: 'GET', url: 'http://dev-foodspokes.gotpantheon.com/api/farmers.json'}).success(function(data){
+			$http({method: 'GET', url: 'http://dev-foodspokes.gotpantheon.com/api/restaurants.json'}).success(function(data){
 				$scope.farmers = data; // response data 
 			
 			});
