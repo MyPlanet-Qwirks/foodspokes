@@ -96,11 +96,20 @@ padding: 10px;
 }
 
 .homep{
+background-color:#ffcc66;
+width: 100vw;
+position: absolute;
 text-align: center;
 background-color: ;
 height: 100%;
-color: #333333;
+color: #333;
 font-size: 65px;
+font-family: 'source sans pro', sans-serif;
+}
+
+.homep a{
+color: #006743;
+font-size: 40px;
 }
 
 .navbar{
@@ -379,4 +388,32 @@ padding-left:150px;
 .welcome{
 padding-top: 40vh;
 padding-right:50px;
+}
+
+.btn-default{
+font-family: 'source sans pro', sans-serif;
+font-weight:200;
+color: #fff;
+background-image: none;
+background-color: #333;
+text-shadow: none;
+border-left-style:solid;
+border-left-width:1px;
+border-left-color: #ffcc66;
+}
+
+.btn-default:hover{
+border-left-style:solid;
+border-left-width:1px;
+border-left-color: #ffcc66;
+border-right-color: #ffcc66;
+font-family: 'source sans pro', sans-serif;
+font-weight:200;
+background-image: none;
+background-color: #333;
+color: #ffcc66;
+}
+
+#comment{
+
 }
