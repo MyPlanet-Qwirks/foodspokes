@@ -14,6 +14,7 @@
 	
 	<!-- Custom Styles -->
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/style3.css">
     <link rel="stylesheet" type="text/css" href="css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="css/component2.css" />
@@ -53,20 +54,15 @@
 <div class="bg">
 	<div class="row wrapper searchResultsWrapper" >
         <div class="col-sm-3">
-          <div class="filter2">
-                         <div class="btn-group">
-        <button type="button" class="btn btn-default btn-md">
-   Restaurants
-</button>
-            
-               <button type="button" class="btn btn-default btn-md">
-   Suppliers
-</button>
-</div>
-              </div>
+           <div class="filter2">
+                <div class="btn-group">
+			        <button type="button" class="btn btn-default btn-sm">Restaurants</button>
+			         <button type="button" class="btn btn-default btn-sm">Suppliers</button>
+				</div>
+            </div>
             
         <div class="filter"> 
-        <input class="searchBar" type="text" ng-model="search.$" placeholder="search"/>
+        <input class="searchBar" type="text" ng-model="search.$" placeholder="  search"/>
           
             <div class="category">
             <h3>CATEGORY</h3>
@@ -99,6 +95,7 @@
                 <div class="farmerCard">
                     <h3>{{farmer.node_title}}</h3>
                     <div>{{farmer.address.locality}}, {{farmer.address.administrative_area}}</div>
+                    <div class="card_flavor_text">{{farmer.flavor_text}}</div>
                 </div>
                 
 			<div class="farmericon">
@@ -106,21 +103,108 @@
 			</div>
             </a>
 			
+            <style type="text/css">
+            	.farmerCard{
+
+            		opacity:1;
+            		background-color:rgba(253, 249, 238, 0.6);
+            		border-bottom-right-radius: 0;
+            		border-bottom-left-radius:0;
+            	}
+
+            
+
+            	.farmerCard h3, .modal h3{
+            		font-family: 'Oswald', sans-serif;
+            		font-size:24px;
+            		font-weight:700;
+            	}
+            	.modal{
+            		color: #004623;
+            	}
+
+            	.modal-content{
+            		display:block;
+            		background-color:#ccc;
+            	}
+
+            	.modal h4{
+					font-size:18px;
+					margin:0;
+					margin-top:15px;
+					margin-bottom:5px;
+
+            	}
+            	.modal section{
+            		padding-bottom:15px;
+            		border-bottom:1px solid #004623;
+            		margin-right:10px;
+            		margin-left:10px;
+        		}
+
+            	.modal ul,.modal p{
+            		margin:0;
+            	}
+
+            	.modal p{
+            		padding:0;
+            	}
+
+            	.modal section p{
+            		padding-left:20px;
+            	}
+
+
+            	.modal-header{
+            		border-bottom:1px solid #004623;
+            		color: #004623 !important;
+            	}
+
+            	.farmericon{
+            		border-top:1px solid #004623;
+            		-webkit-border-radius-top: 0px !important;
+					-moz-border-radius-top: 0px !important;
+					border-radius-top: 0px !important;
+						border-top-right-radius:0 !important;
+            		border-top-left-radius:0 !important;
+            	}
+
+            	.modal glyphicon{
+            		position:relative;
+            		top:4px;
+            		right:5px;
+            	}
+
+            	.modal-body, .modal-footer, .modal-header{
+
+            		background-color:#e0e0d9;
+            	}
+
+            </style>
+
 			<div class="modal fade" id="farm_modal{{$index}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			  <div class="modal-dialog">
 				<div class="modal-content">
 				  <div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title" id="myModalLabel">{{farmer.node_title}}</h4>
+					<button type="button" class="close" style="font-size:30px;font-color:#004623 !important;" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h3 class="modal-title" id="myModalLabel">{{farmer.node_title}}</h3>
 				  </div>
 				  <div class="modal-body">
-					<div class="general-info">
+					<section class="general-info">
+						<h4 style="margin-top:0;">Contact Info</h4>
+						<table style="margin-left:20px;">
+							<tr>
+								<td><i class="glyphicon glyphicon-map-marker" style="top:-22px;"></i></td>
+								<td style="padding-right:50px;">
 						{{farmer.address.thoroughfare}}</br>
 						{{farmer.address.locality}}, {{farmer.address.administrative_area}}</br>
 						{{farmer.address.postal_code}}<br>
-						Tel: {{farmer.phone}}</br>
-						Email: {{farmer.email}}<br/>
-						<a href="{{farmer.website}}">{{farmer.website}}</a>
+					</td>
+					<td>
+						<i class="glyphicon glyphicon-earphone"></i> {{farmer.phone}}</br>
+						<i class="glyphicon glyphicon-envelope"></i> {{farmer.email}}<br/>
+						<i class="glyphicon glyphicon-globe"></i> <a href="{{farmer.website}}">{{farmer.website}}</a>
+					</td>
 						<!--
 						<div class="modal-social">
 							<a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
@@ -128,27 +212,44 @@
 							<a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
 						</div>
 						-->
-					</div>
-					<div class="product-info">
-					<br></></><h4>Product Types:</h4>
+					</tr>
+						</table>
+					</section>
+					<section class="description">
+							<h4>About Us</h4><p>
+						{{farmer.description}}</p>
+					</section>
+					<section class="product-info" style="border-bottom:none;">
+					<h4>Product Types:</h4>
+						<p>
 						<ul>
 							<li ng-repeat="category in farmer.category" style="text-transform:capitalize;">{{category}}</li>
 						</ul>
-						<a href="">See all products</a>
-					</div>
-					<br></><div class="availability-info">
-						<h4>Availability:</h4>
-						<a href="#">Download PDF</a>
-					</div>
-					<br></><div class="invoice-info">
-						<h4>Invoice Style:</h4>
-						<ul>
-							<li ng-repeat="invoice in farmer.invoice_style">{{invoice}}</li>
+						<h4>Products:</h4>
+						<ul class="products-list">
+							<li ng-repeat="product in farmer.product_list_2">
+								{{product}}
+							</li>
 						</ul>
-					</div>
+						</p>
+				
+						<h4>Availability:</h4>
+						<p><ul>
+							<li ng-repeat="schedule_item in farmer.delivery_schedule_2">
+								{{schedule_item}}
+							</li>
+						</ul></p>
+		
+						<h4>Invoice Style:</h4>
+						<p><ul>
+							<li ng-repeat="invoice in farmer.invoice_style">{{invoice}}</li>
+						</ul></p>
+					</section>
 				  </div> <!-- modal-body end -->
+				  
 				  <div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				  		<!--
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
 				  </div>
 				</div>
 			  </div> 
