@@ -23,9 +23,11 @@
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		<script src="http://desandro.github.io/imagesloaded/imagesloaded.pkgd.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-animate.min.js"></script>
-	<script src="http://passy.github.io/angular-masonry/angular-masonry.min.js"></script>
+	<script src"https://cdnjs.cloudflare.com/ajax/libs/masonry/3.1.2/masonry.pkgd.min.js"></script>
+<script src="http://passy.github.io/angular-masonry/angular-masonry.min.js"></script>
 	
 </head>
 <body ng-app="FarmerApp" ng-controller="FarmerCtrl">
@@ -113,8 +115,8 @@
 
          </style>
 
-        <div class="col-sm-9">
-        <div class="col-md-4 animate-repeat"  ng-repeat="farmer in farmers | searchFilter: search | filter:chk.t1 | filter:chk.t2 | filter:chk.t3 | filter:chk.t4 | filter:chk.t5 | filter:chk.t6 | filter:chk.t7">
+        <div class="col-sm-9" masonry="true">
+        <div class="col-md-4 animate-repeat masonry-brick"  ng-repeat="farmer in farmers | searchFilter: search | filter:chk.t1 | filter:chk.t2 | filter:chk.t3 | filter:chk.t4 | filter:chk.t5 | filter:chk.t6 | filter:chk.t7">
             <a href data-toggle="modal" data-target="#farm_modal{{$index}}">
                 <div class="farmerCard">
                     <h3>{{farmer.node_title}}</h3>
@@ -191,7 +193,7 @@
 </div>
 
 		<script>
-		var app = angular.module('FarmerApp',['ngAnimate']);
+		var app = angular.module('FarmerApp',['ngAnimate','wu.masonry']);
 		
 		app.controller('FarmerCtrl', function($scope, $http){
 			$http({method: 'GET', url: 'http://dev-foodspokes.gotpantheon.com/api/farmers.json'}).success(function(data){
