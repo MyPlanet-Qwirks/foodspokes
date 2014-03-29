@@ -54,7 +54,7 @@
 	<div class="row wrapper searchResultsWrapper" >
         <div class="col-sm-3">
           <div class="filter">
-        <input class="searchBar" type="text" ng-model="search" placeholder="search"/>
+        <input class="searchBar" type="text" ng-model="search" placeholder="&nbsp;search"/>
           
             <div class="category">
             <h3>CUISINE</h3>
@@ -110,7 +110,7 @@
 						{{farmer.field_data_field_address_field_address_postal_code}}<br>
 						Tel: {{farmer.phone}}</br>
 						Email: {{farmer.email}}<br/>
-						Website: <a href="{{farmer.website}}">{{farmer.website}}</a>
+						Website: <a href="http://{{farmer.Website}}" target="_blank">{{farmer.Website}}</a>
 						<!--
 						<div class="modal-social">
 							<a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
@@ -120,7 +120,7 @@
 						-->
 					</div>
 					<div class="description">
-						{{farmer.description}}
+						Description:</br>{{farmer.description}}
 					</div>
 					<!-- <div class="product-info">
 						<h4>Product Types:</h4>
